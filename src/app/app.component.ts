@@ -33,8 +33,8 @@ export class AppComponent implements OnInit {
 
   getMixedCards() {
     return CARDS
-      // .map(value => ({ value, sort: Math.random() }))
-      // .sort((a, b) => a.sort - b.sort)
-      // .map(({ value }) => value);
+      .map(value => ({ value, sort: Math.random() }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(({ value }) => value);
   }
 }
