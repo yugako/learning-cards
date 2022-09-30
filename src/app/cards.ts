@@ -67,26 +67,26 @@ hybrid (mix of above)`
       'OR'+
       `is a mechanism for combining functions, in which the output of each function is passed into the next one, and the output of the last function is the final result.
 
-Sometimes it's hard to read multiply nested functions in a composition, so it's a bit more clear with the helpers like compose.
+        Sometimes it's hard to read multiply nested functions in a composition, so it's a bit more clear with the helpers like compose.
 
-A useful method for function composition in JavaScript is reduceRight.`
+        A useful method for function composition in JavaScript is reduceRight.`
   },
   {
     question: 'Обєктна композиція що це таке?',
     answer: ''
   },
   {
-    question: 'Composition over inheritance<br>',
+    question: 'Composition over inheritance',
     answer: `Software development is mostly about a function composition or an object composition. Hence we compare it with inheritance let's talk about object composition here. It refers to combining objects into more complex ones.
+      <br>
+      Cons of inheritance:
 
-Cons of inheritance:
-
-The tight coupling problem: Because child classes are dependent on the implementation of the parent class, class inheritance is the tightest coupling available in object-oriented design.
-The fragile base class problem: Due to tight coupling, changes to the base class can potentially break a large number of descendant classes — potentially in code managed by third parties. The author could break code they’re not aware of.
-The inflexible hierarchy problem: With single ancestor taxonomies, given enough time and evolution, all class taxonomies are eventually wrong for new use-cases.
-The duplication by necessity problem: Due to inflexible hierarchies, new use cases are often implemented by duplication, rather than extension, leading to similar classes which are unexpectedly divergent. Once duplication sets in, it’s not obvious which class new classes should descend from or why.
-The gorilla/banana problem: “…the problem with object-oriented languages is they’ve got all this implicit environment that they carry around with them. You wanted a banana but what you got was a gorilla holding the banana and the entire jungle.” ~ Joe Armstrong, “Coders at Work”
-Function composition is very similar to object composition and has its pros over an inheritance.`
+      The tight coupling problem: Because child classes are dependent on the implementation of the parent class, class inheritance is the tightest coupling available in object-oriented design.<br>
+      The fragile base class problem: Due to tight coupling, changes to the base class can potentially break a large number of descendant classes — potentially in code managed by third parties. The author could break code they’re not aware of.<br>
+      The inflexible hierarchy problem: With single ancestor taxonomies, given enough time and evolution, all class taxonomies are eventually wrong for new use-cases.<br>
+      The duplication by necessity problem: Due to inflexible hierarchies, new use cases are often implemented by duplication, rather than extension, leading to similar classes which are unexpectedly divergent. Once duplication sets in, it’s not obvious which class new classes should descend from or why.<br>
+      The gorilla/banana problem: “…the problem with object-oriented languages is they’ve got all this implicit environment that they carry around with them. You wanted a banana but what you got was a gorilla holding the banana and the entire jungle.” ~ Joe Armstrong, “Coders at Work”
+      Function composition is very similar to object composition and has its pros over an inheritance.`
   },
   {
     question: 'Як можна атоматизувати функціональну композицію?',
@@ -106,7 +106,7 @@ Function composition is very similar to object composition and has its pros over
   {
     question: 'Whats referential transparency?',
     answer: `Referential transparency
-is a property of an expression to stay the same after replacing it with its corresponding value (and vice-versa). Pure functions are always referentially transparent, and we can easily replace them with their output.`
+      is a property of an expression to stay the same after replacing it with its corresponding value (and vice-versa). Pure functions are always referentially transparent, and we can easily replace them with their output.`
   },
   {
     question: 'Що таке first class functions/ citizens?',
@@ -126,13 +126,13 @@ is a property of an expression to stay the same after replacing it with its corr
       Immutables are the objects whose state cannot be changed once the object is created.
       One of great examples is NgRx store which returns the new instance of store state.
       We can use Object.freeze to make object immutable. Also we can use defineProperty object function to set such properties as writeable and configurable to config some elements in object or array`
-+ '<br><br> Another explanation: <br>'  +`Immutability in OOP and FP is a property of an object state being unable to change.
-<br><br>
-Weak immutability
-The state of an object consists of two parts: its fields (shape/type) and its values (appearance/instance). If an object's shape cannot be changed but its appearance can - we call this weak immutability. In JavaScript, objects are high mutable by design. We can alter their shape as well as their appearance.
-<br><br>
-Strong immutability
-In contrast, strong immutability means the impossibility of changing anything about an object's state, neither fields nor values. In JavaScript, under the hood, e.g., strings are strongly immutable (but in the language user's point of view, all the primitives in JS are weakly immutable till you do not force them to strong immutability with the const keyword).`
+      + '<br><br> Another explanation: <br>'  +`Immutability in OOP and FP is a property of an object state being unable to change.
+      <br><br>
+      Weak immutability
+      The state of an object consists of two parts: its fields (shape/type) and its values (appearance/instance). If an object's shape cannot be changed but its appearance can - we call this weak immutability. In JavaScript, objects are high mutable by design. We can alter their shape as well as their appearance.
+      <br><br>
+      Strong immutability
+      In contrast, strong immutability means the impossibility of changing anything about an object's state, neither fields nor values. In JavaScript, under the hood, e.g., strings are strongly immutable (but in the language user's point of view, all the primitives in JS are weakly immutable till you do not force them to strong immutability with the const keyword).`
   },
   {
     question: 'Що таке Шеред стейт?',
@@ -147,22 +147,22 @@ In contrast, strong immutability means the impossibility of changing anything ab
       'JavaScript asynchronization can\'t be in parallel as JavaScript executes on a single thread, but it works with concurrency.'+
       `This is why usually it is better to combine both solutions.
 
-Cancel the previous unneeded request: it will free up the server of handling the unneeded request
-In a case that only the last request is needed, save a session object and handle only the request with the correct session.`
+      Cancel the previous unneeded request: it will free up the server of handling the unneeded request
+      In a case that only the last request is needed, save a session object and handle only the request with the correct session.`
   },
   {
     question: 'Що таке рекурсія?',
     answer: `Recursion is a process of calling itself. A function that calls itself is called a recursive function.
-    A recursive function always has a condition to stop calling itself. Otherwise, it will call itself indefinitely.<br>
-Tailed recursion<br>
-is about a recursive function which calls itself in exactly the last step of executing.
-<br>
-Pros and Cons
-+ If it's pure, intermediate results can be cached.
-+ Tailed recursive function can be transformed to cycle by compiler (in some languages, including JavaScript).
-+ Easier to read solution of problem.
-- Possible performance issues (each step allocates the whole function environment in memory again).
-- Limited in calls number.`
+      A recursive function always has a condition to stop calling itself. Otherwise, it will call itself indefinitely.<br>
+      Tailed recursion<br>
+      is about a recursive function which calls itself in exactly the last step of executing.
+      <br>
+      Pros and Cons
+      + If it's pure, intermediate results can be cached.<br>
+      + Tailed recursive function can be transformed to cycle by compiler (in some languages, including JavaScript).<br>
+      + Easier to read solution of problem.<br>
+      - Possible performance issues (each step allocates the whole function environment in memory again).
+      - Limited in calls number.`
   },
   {
     question: 'Що вигідніше рекурсія чи ітерація?',
@@ -180,9 +180,9 @@ Pros and Cons
     question: 'What is tail call optimization?',
     answer: `Tail Call Optimization is related to a specific type of optimization that can occur with function calls. According to Kyle Simpson, a tail call is a function call that appears at the tail of another function, such that after the call finishes, there’s nothing left to do.
 
-Tail code optimization takes a recursive function and generate an iterative function using “goto” internally, and then execute it. It does not limit the stack calls because there are none and the function is not a recursive function more. The performance of this iterative function is equivalent to its recursive function.
+      Tail code optimization takes a recursive function and generate an iterative function using “goto” internally, and then execute it. It does not limit the stack calls because there are none and the function is not a recursive function more. The performance of this iterative function is equivalent to its recursive function.
 
-In other words, tail call optimization means that it is possible to call a function from another function without growing the call stack.`
+      In other words, tail call optimization means that it is possible to call a function from another function without growing the call stack.`
   },
   {
     question: 'Що таке Currying and Partially Application?',
@@ -193,43 +193,43 @@ In other words, tail call optimization means that it is possible to call a funct
     answer: ''
   },
   {
-    question: 'Що таке МОнада?',
+    question: 'Що таке Монада?',
     answer: ''
   },
   {
     question: 'Плюси і мінуси ООП',
     answer: `
-    Advantages:
-    We can reuse the code multiple times using class
-    Inherit the class to subclass for data redundancy
-    It is easy to maintain and modify
-    It maintains the security of data
-    Low-cost development
+    Advantages:<br>
+    We can reuse the code multiple times using class<br>
+    Inherit the class to subclass for data redundancy<br>
+    It is easy to maintain and modify<br>
+    It maintains the security of data<br>
+    Low-cost development<br><br>
 
-    Disadvantages
-    Size is larger than other programs
-    It required a lot of effort to create
-    It is slower than other programs
-    It is not suitable for some sorts of problems
+    Disadvantages<br>
+    Size is larger than other programs<br>
+    It required a lot of effort to create<br>
+    It is slower than other programs<br>
+    It is not suitable for some sorts of problems<br>
     It takes time to get used to it.`
   },
   {
     question: 'Плюси і мінуси функціонального програмування',
-    answer: `FP pros and cons
-Disadvantages
+    answer: `
+      Disadvantages<br>
 
-There is no efficient vocabulary for functional languages. Purely functional vocabularies work slower than the hash tables, and for some applications, this can be critical. Secondly, there is no purely functional weak hash map. Nevertheless, for most developers, this defect may remain unnoticed.
-Functional programming is not suitable for algorithms in graphs (due to slow work) and in general for those solutions that for decades were based on imperative programming.
-Check the lists of FP disadvantages on Quora and in the article by Alexander Alvin too.
+      There is no efficient vocabulary for functional languages. Purely functional vocabularies work slower than the hash tables, and for some applications, this can be critical. Secondly, there is no purely functional weak hash map. Nevertheless, for most developers, this defect may remain unnoticed.
+      Functional programming is not suitable for algorithms in graphs (due to slow work) and in general for those solutions that for decades were based on imperative programming.
+      Check the lists of FP disadvantages on Quora and in the article by Alexander Alvin too.
 
-Okay, the last point we mentioned is not very related to cons because we cannot blame functional programming for what it was not meant to be.
+      Okay, the last point we mentioned is not very related to cons because we cannot blame functional programming for what it was not meant to be.
+      <br><br>
+      Advantages<br>
 
-Advantages
-
-Functional programming is famous for its high-level abstractions that hide a large number of details of such routine operations like iterating. This makes the code shorter and, as a consequence, guarantees a smaller number of errors that can be tolerated.
-In the functional programming, there is a smaller number of language primitives. Well-known classes are not used in FP. Instead of creating a unique description of an object with operations in the form of methods, in functional programming, there are several basic language primitives that are well optimized inside.
-Due to the language and structures flexibility, as a functional programming developer, you can bring the language closer to the problem. And not vice versa. In addition, FP offers some new and interesting tools for solving complex tasks that OOP developers often neglect.
-Working with functional languages provides accurate and fast code writing, facilitates testing and debugging. You’re working with high-level programs, and the functions signatures are more informative.`
+      Functional programming is famous for its high-level abstractions that hide a large number of details of such routine operations like iterating. This makes the code shorter and, as a consequence, guarantees a smaller number of errors that can be tolerated.
+      In the functional programming, there is a smaller number of language primitives. Well-known classes are not used in FP. Instead of creating a unique description of an object with operations in the form of methods, in functional programming, there are several basic language primitives that are well optimized inside.
+      Due to the language and structures flexibility, as a functional programming developer, you can bring the language closer to the problem. And not vice versa. In addition, FP offers some new and interesting tools for solving complex tasks that OOP developers often neglect.
+      Working with functional languages provides accurate and fast code writing, facilitates testing and debugging. You’re working with high-level programs, and the functions signatures are more informative.`
   },
   {
     question: 'Реактивне програмування. Що це таке? в чому його суть?',
@@ -238,27 +238,25 @@ Working with functional languages provides accurate and fast code writing, facil
   {
     question: 'Що таке реактивне функціональне програмування?',
     answer: 'The main idea of (functional) reactive programming is to build programs in a declarative way, by defining the streams, how they are linked together, and what happens if a new stream value arrives over time.' +
-      `ORRRR
-    Reactive programming is mostly like Functional programming where functions and data are combined with time and called streams. We can create a stream from anything: array, primitive value, etc. We can merge streams, composite them, have HoS (high order stream) which takes another stream as an input or gives as a result.
-
-  A stream is a sequence of ongoing events ordered in time. Streams can emit three things: a value (of some type), an error, or a "completed" signal. To capture these emits you subscribe to a stream passing a function called observers (Observer design pattern).
-
-On top of that ideas, we have a bunch of functions to help us handle streams with all the power of functionality.`
+      `<br>ORRRR<br><br>
+        Reactive programming is mostly like Functional programming where functions and data are combined with time and called streams. We can create a stream from anything: array, primitive value, etc. We can merge streams, composite them, have HoS (high order stream) which takes another stream as an input or gives as a result.
+        A stream is a sequence of ongoing events ordered in time. Streams can emit three things: a value (of some type), an error, or a "completed" signal. To capture these emits you subscribe to a stream passing a function called observers (Observer design pattern).
+        On top of that ideas, we have a bunch of functions to help us handle streams with all the power of functionality.`
   },
   {
     question: 'Які можуть бути стріми в реактивному програмуванні?',
     answer: `Хот і колд і теплі (мікс хот і колд)
-Приклад темплого обсервебла - якщо 2-3 рази підпишешсся. то він піде 3 рази. а так через мультикастинг , навітьякщо підпишемся 3 рази, то тіки запит піде 1 раз, а інши його будуть переюзувати`
+    Приклад темплого обсервебла - якщо 2-3 рази підпишешсся. то він піде 3 рази. а так через мультикастинг , навітьякщо підпишемся 3 рази, то тіки запит піде 1 раз, а інши його будуть переюзувати`
   },
   {
-    question: 'порівняння обсервеблів з промісом. Відмінності',
+    question: 'Порівняння обсервеблів з промісом. Відмінності',
     answer: `
-    Observables - Promises  -| <br>
-    Emit multiple values over a period of time. - Emit a single value at a time.<br>
-Are lazy: they’re not executed until we subscribe to them using the subscribe() method. - Are not lazy: execute immediately after creation. <br>
-Have subscriptions that are cancellable using the unsubscribe() method, which stops the listener from receiving further values. - Are not cancellable. <br>
-Provide the map for forEach, filter, reduce, retry, and retryWhen operators. - Don’t provide any operations. <br>
-Deliver errors to the subscribers. - Push errors to the child promises.`
+      Observables - Promises  -| <br>
+      Emit multiple values over a period of time. - Emit a single value at a time.<br>
+      Are lazy: they’re not executed until we subscribe to them using the subscribe() method. - Are not lazy: execute immediately after creation. <br>
+      Have subscriptions that are cancellable using the unsubscribe() method, which stops the listener from receiving further values. - Are not cancellable. <br>
+      Provide the map for forEach, filter, reduce, retry, and retryWhen operators. - Don’t provide any operations. <br>
+      Deliver errors to the subscribers. - Push errors to the child promises.`
   },
   {
     question: 'що таке депенденсі інджекшин патерн?',
@@ -275,22 +273,22 @@ Deliver errors to the subscribers. - Push errors to the child promises.`
   {
     question: `Pros and cons of reactive programming`,
     answer: `The most common example of RP in the JavaScript world is RxJS.
+      <br><br>
+      Pros:
+      <br><br>
+      writing declarative code<br>
+      avoiding callback hell<br>
+      purity<br>
+      avoiding implementation details with a focus on business goals<br><br>
+      Cons:<br>
 
-Pros:
-
-writing declarative code
-avoiding callback hell
-purity
-avoiding implementation details with a focus on business goals
-Cons:
-
-only hard debugging
-making documentation
-memory consumption,
-time to start
-managing concurrency
-complexity of testing
-a learning curve`
+      only hard debugging<br>
+      making documentation<br>
+      memory consumption,<br>
+      time to start<br>
+      managing concurrency<br>
+      complexity of testing<br>
+      a learning curve`
   },
   {
     question: 'Як відбувається комунікація в компютері?',
@@ -300,27 +298,27 @@ a learning curve`
     question: 'OSI модель',
     answer: 'OSI model is developed by ISO (International Standard Organization), Its abbreviation for Open Systems Interconnection model. Layers'+
       `</br> <b>Application</b>
-Data
-High-level APIs, including resource sharing, remote file access
+      Data
+      High-level APIs, including resource sharing, remote file access
 
-</br> <b>Presentation-</b>
-Data
-Translation of data between a networking service and an application; including character encoding, data compression, and encryption/decryption
-</br> <b>Session -</b>
-Data
-Managing communication sessions, i.e., a continuous exchange of information in the form of multiple back-and-forth transmissions between two nodes
-</br> <b>Transport- </b>
-Segment, Datagram
-Reliable transmission of data segments between points on a network, including segmentation, acknowledgement, and multiplexing
-</br> <b>Network - </b>
-Packet
-Structuring and managing a multi-node network, including addressing, routing, and traffic control
-</br> <b>Data link - </b>
-Frame
-Reliable transmission of data frames between two nodes connected by a physical layer
-</br> <b>Physical - </b>
-Bit, Symbol
-Transmission and reception of raw bitstreams over a physical medium` +
+      </br> <b>Presentation-</b>
+      Data
+      Translation of data between a networking service and an application; including character encoding, data compression, and encryption/decryption
+      </br> <b>Session -</b>
+      Data
+      Managing communication sessions, i.e., a continuous exchange of information in the form of multiple back-and-forth transmissions between two nodes
+      </br> <b>Transport- </b>
+      Segment, Datagram
+      Reliable transmission of data segments between points on a network, including segmentation, acknowledgement, and multiplexing
+      </br> <b>Network - </b>
+      Packet
+      Structuring and managing a multi-node network, including addressing, routing, and traffic control
+      </br> <b>Data link - </b>
+      Frame
+      Reliable transmission of data frames between two nodes connected by a physical layer
+      </br> <b>Physical - </b>
+      Bit, Symbol
+      Transmission and reception of raw bitstreams over a physical medium` +
       `We have cool abrr to rememmer all layers - Please Do Not Tell Secret Password Anyone`
   },
   {
@@ -336,71 +334,92 @@ Transmission and reception of raw bitstreams over a physical medium` +
     question: 'Різниця між OSI та TCP/IP',
     answer: '- TCP/IP is designed to solved specific communication problems on specific protocols when OSI is generic protocol independent model' +
       '<br>- In TCP/IP most applications use all of layers when in OSI single apps do not use all. Only 1,2, 3 are mandatory' +
-      'OSI header is 5 bytes, whereas TCP/IP header size is 20 bytes.'
+      '<br>-OSI header is 5 bytes, whereas TCP/IP header size is 20 bytes.'
+  },
+  {
+    question: 'Whats Internet Protocol',
+    answer: `<div class="markdown-body">
+                <h1>
+                Internet Protocol</h1>
+          <p>IP implements packet-switched networking. It has a concept of hosts, which are machines. The IP protocol specifies how datagrams (packets) are sent between these hosts.</p>
+          <p>A packet is a chunk of binary data that has a source host and a destination host. An IP network will then simply transmit the packet from the source to the destination. One important aspect of IP is that packets are delivered using the best effort. A packet may be lost along the way and never reach the destination. Or it may get duplicated and arrive multiple times at the destination.</p>
+          <p>Each host in an IP network has an address -- the so-called IP address. Each packet contains the source and destination hosts' addresses. The IP is responsible for routing datagrams -- as the IP packet travels through the network, each node (host) that it travels through looks at the destination address in the packet to figure out in which direction the packet should be forwarded.</p>
+          <p>Today, most packages are still IPv4 (Internet Protocol version 4), where each IPv4 address is 32 bits long. They're most often written in dotted-decimal notation, like so: 198.51.100.42</p>
+          <p>The newer IPv6 standard is slowly gaining traction. It has a larger address space: its addresses are 128 bits long. This allows for easier routing as the packets travel through the network. And since there are more available addresses, tricks such as network address translation are no longer necessary. IPv6 addresses are represented in the hexadecimal system and divided into eight groups separated by colons, e.g., 2001:0db8:85a3:0042:1000:8a2e:0370:7334</p>
+          <h2>
+          Structure</h2>
+          <p>An IP packet consists of a header and a payload.</p>
+          <p>The header is 20 bytes long (without options, which are rarely used).</p>
+          <p>The IPv6 header has a fixed length of 40 bytes. It's a lot simpler than IPv4 - a few lessons were learned in the years that have passed since IPv4.</p>
+          <h2>
+          Fragmentation</h2>
+          <p>In IPv4, packets (datagrams) can get fragmented. The underlying transport layer will have an upper limit to the length of a packet it can support. In IPv4, a router may fragment a packet if it gets routed onto an underlying data link for which the packet would otherwise be too big. These packets will then get reassembled at the destination host. The sender can decide to disallow routers to fragment packets, in which case they'll send a Packet Too Big ICMP back to the sender.</p>
+          <p>In IPv6, a router will always drop the packet and send back a Packet Too Big ICMP6 message to the sender. The endpoints use this to make a path MTU discovery to figure out what the optimal so-called maximum transfer unit (MTU) along the path between the two hosts is. Only when the upper layer has a minimum payload size that is too big for this MTU will IPv6 use fragmentation. With TCP over IPv6, this is not the case.</p>
+              </div>`
   },
   {
     question: 'TCP vs UDP',
     answer: `here are two types of Internet Protocol (IP) traffic. They are TCP or Transmission Control Protocol and UDP or User Datagram Protocol. TCP is connection oriented – once a connection is established, data can be sent bidirectional. UDP is a simpler, connectionless Internet protocol. Multiple messages are sent as packets in chunks using UDP.
-    <br>
-<table style="border: 1px solid white;
-  border-collapse: collapse;" border="1" cellpadding="1" cellspacing="1">
-  <tr>
-    <th scope="col" style="border: 1px solid white;
-  border-collapse: collapse;">TCP</th>
-    <th scope="col" style="border: 1px solid white;
-  border-collapse: collapse;">UDP</th>
-  </tr>
-  <tr>
-    <td style="border: 1px solid white;
-  border-collapse: collapse;">TCP is suited for applications that require high reliability, and transmission time is relatively less critical.</td>
-    <td style="border: 1px solid white;
-  border-collapse: collapse;">UDP is suitable for applications that need fast, efficient transmission, such as games. UDP's stateless nature is also useful for servers that answer small queries from huge numbers of clients.</td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid white;
-  border-collapse: collapse;">TCP rearranges data packets in the order specified.</td>
-    <td style="border: 1px solid white;
-  border-collapse: collapse;">UDP has no inherent order as all packets are independent of each other. If ordering is required, it has to be managed by the application layer.</td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid white;
-  border-collapse: collapse;">TCP is slower than UDP.</td>
-    <td style="border: 1px solid white;
-  border-collapse: collapse;">UDP is faster because error recovery is not attempted. It is a "best effort" protocol.</td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid white;
-  border-collapse: collapse;">There is absolute guarantee that the data transferred remains intact and arrives in the same order in which it was sent.</td>
-    <td style="border: 1px solid white;
-  border-collapse: collapse;">There is no guarantee that the messages or packets sent would reach at all.</td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid white;
-  border-collapse: collapse;">TCP is heavy-weight. TCP requires three packets to set up a socket connection, before any user data can be sent. TCP handles reliability and congestion control.</td>
-    <td style="border: 1px solid white;
-  border-collapse: collapse;">UDP is lightweight. There is no ordering of messages, no tracking connections, etc. It is a small transport layer designed on top of IP.</td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid white;
-  border-collapse: collapse;">TCP does error checking and error recovery. Erroneous packets are retransmitted from the source to the destination.</td>
-    <td style="border: 1px solid white;
-  border-collapse: collapse;">UDP does error checking but simply discards erroneous packets. Error recovery is not attempted.</td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid white;
-  border-collapse: collapse;">Hadshake SYN, SYN-ACK, ACK</td>
-    <td style="border: 1px solid white;
-  border-collapse: collapse;">No hadshake</td>
-  </tr>
-</table>`
+      <br>
+      <table style="border: 1px solid white;
+        border-collapse: collapse;" border="1" cellpadding="1" cellspacing="1">
+        <tr>
+          <th scope="col" style="border: 1px solid white;
+        border-collapse: collapse;">TCP</th>
+          <th scope="col" style="border: 1px solid white;
+        border-collapse: collapse;">UDP</th>
+        </tr>
+        <tr>
+          <td style="border: 1px solid white;
+        border-collapse: collapse;">TCP is suited for applications that require high reliability, and transmission time is relatively less critical.</td>
+          <td style="border: 1px solid white;
+        border-collapse: collapse;">UDP is suitable for applications that need fast, efficient transmission, such as games. UDP's stateless nature is also useful for servers that answer small queries from huge numbers of clients.</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid white;
+        border-collapse: collapse;">TCP rearranges data packets in the order specified.</td>
+          <td style="border: 1px solid white;
+        border-collapse: collapse;">UDP has no inherent order as all packets are independent of each other. If ordering is required, it has to be managed by the application layer.</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid white;
+        border-collapse: collapse;">TCP is slower than UDP.</td>
+          <td style="border: 1px solid white;
+        border-collapse: collapse;">UDP is faster because error recovery is not attempted. It is a "best effort" protocol.</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid white;
+        border-collapse: collapse;">There is absolute guarantee that the data transferred remains intact and arrives in the same order in which it was sent.</td>
+          <td style="border: 1px solid white;
+        border-collapse: collapse;">There is no guarantee that the messages or packets sent would reach at all.</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid white;
+        border-collapse: collapse;">TCP is heavy-weight. TCP requires three packets to set up a socket connection, before any user data can be sent. TCP handles reliability and congestion control.</td>
+          <td style="border: 1px solid white;
+        border-collapse: collapse;">UDP is lightweight. There is no ordering of messages, no tracking connections, etc. It is a small transport layer designed on top of IP.</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid white;
+        border-collapse: collapse;">TCP does error checking and error recovery. Erroneous packets are retransmitted from the source to the destination.</td>
+          <td style="border: 1px solid white;
+        border-collapse: collapse;">UDP does error checking but simply discards erroneous packets. Error recovery is not attempted.</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid white;
+        border-collapse: collapse;">Hadshake SYN, SYN-ACK, ACK</td>
+          <td style="border: 1px solid white;
+        border-collapse: collapse;">No hadshake</td>
+        </tr>
+      </table>`
   },
   {
     question: 'Які протоколи юзають TCP,  які UDP',
     answer: 'TCP: HTTP, HTTPs, FTP, SMTP, Telnet <br> UDP:DNS, DHCP, TFTP, SNMP, RIP, VOIP.'
   },
   {
-    question: 'Чому коли ми розробляємо аплікейшин, перший файл який прилітає має бути меншим за 14 кілобайт?',
-    answer: ''
+    question: 'Чому коли ми розробляємо аплікейшин, перший файл який прилітає має бути меншим за 14 байт?',
+    answer: 'I guess its good for performance as there would be no need for tcp to request another files'
   },
   {
     question: 'Що таке HTTP протокол. Як працює',
@@ -508,9 +527,9 @@ Transmission and reception of raw bitstreams over a physical medium` +
     answer: 'Transport Layer Security (TLS) is the latest version of the Secure Socket Layer (SSL) protocol. Both protocols ensure data privacy and authenticity over the internet. These widely used protocols provide end-to-end security by applying encryption for web-based communication. However, despite the similarities of TLS and SSL, they have significant differences, too.<br>' +
       'the protocols accomplish three fundamental goals of security:<br>' +
       `<ul> <li> <strong>Confidentiality:</strong> Encrypts data to hide it from third parties such that only an intended recipient can view the content. </li> <li> <strong>Integrity:</strong> Applies message authentication code to verify encrypted message content. </li> <li> <strong>Authentication:</strong> Authenticates the website/client/server's identity with the help of a certificate to ensure parties exchanging information cannot back off from their identity. </li> </ul> <br>
-   <br>Differences:
-<table border="1" cellpadding="1" cellspacing="1"> <thead> <tr> <th scope="col">SSL</th> <th scope="col">TLS</th> </tr> </thead> <tbody> <tr> <td>SSL is a complex protocol to implement.</td> <td>TLS is a simpler protocol.</td> </tr> <tr> <td>SSL has three versions, of which SSL 3.0 is the latest.</td> <td>TLS has four versions, of which the TLS 1.3 version is the latest</td> </tr> <tr> <td>All SSL protocol versions are vulnerable to attacks.</td> <td>TLS protocol offers high security.</td> </tr> <tr> <td>SSL uses a message authentication code (MAC) after message encryption for data integrity</td> <td>TLS uses a hash-based message authentication code in its record protocol.</td> </tr> <tr> <td>SSL uses message digest to create a master secret.</td> <td>TLS employs a pseudo-random function to create a master secret.</td> </tr> </tbody></table>
-`
+       <br>Differences:
+      <table border="1" cellpadding="1" cellspacing="1"> <thead> <tr> <th scope="col">SSL</th> <th scope="col">TLS</th> </tr> </thead> <tbody> <tr> <td>SSL is a complex protocol to implement.</td> <td>TLS is a simpler protocol.</td> </tr> <tr> <td>SSL has three versions, of which SSL 3.0 is the latest.</td> <td>TLS has four versions, of which the TLS 1.3 version is the latest</td> </tr> <tr> <td>All SSL protocol versions are vulnerable to attacks.</td> <td>TLS protocol offers high security.</td> </tr> <tr> <td>SSL uses a message authentication code (MAC) after message encryption for data integrity</td> <td>TLS uses a hash-based message authentication code in its record protocol.</td> </tr> <tr> <td>SSL uses message digest to create a master secret.</td> <td>TLS employs a pseudo-random function to create a master secret.</td> </tr> </tbody></table>
+    `
   },
   {
     question: 'Long pulling & short/ajax pulling',
@@ -537,9 +556,9 @@ Transmission and reception of raw bitstreams over a physical medium` +
   {
     question: 'What is WebRTC?',
     answer: `WebRTC is an HTML5 specification which we can use to add real time media communications directly between browser and devices.
-    It's free. It is available in all modern browsers.WebRTC is not limited to only browsers because it is also available for mobile applications.
-    WebRTC is not only about for voice or video calling. It is quite powerful because we
-    can use it to build a group calling service, add recording to it or use it only for data delivery`
+      It's free. It is available in all modern browsers.WebRTC is not limited to only browsers because it is also available for mobile applications.
+      WebRTC is not only about for voice or video calling. It is quite powerful because we
+      can use it to build a group calling service, add recording to it or use it only for data delivery`
   },
   {
     question: 'Що таке Web-soketи. Як працюють? Як юзати?',
@@ -578,16 +597,12 @@ Transmission and reception of raw bitstreams over a physical medium` +
   },
   {
     question: 'HTTP є синхронним чи асинхронним. чому?',
-    answer: ''
-  },
-  {
-    question: 'Протоколи веб служб/веб сервісів? Що таке веб сервіс? ',
-    answer: ''
+    answer: 'синхронним'
   },
   {
     question: 'Що таке JSON RPC?',
-    answer: `JSON-RPC is a stateless, light-weight remote procedure call (RPC) protocol. Primarily this specification defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over http, or in many various message passing environments. It uses JSON (RFC 4627) as data format.<br><br>
-      '<ul>
+    answer: `JSON-RPC is a stateless, light-weight remote procedure call (RPC) protocol. Primarily this specification defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over http, or in many various message passing environments. It uses JSON (RFC 4627) as data format.
+      <ul>
       <li>Transport independent protocol for web services. May work over HTTP as well as over TCP or WebSockets.</li>
       <li>In the case of HTTP works with a single resource (URL) and only one method (POST).</li>
       <li>All instructions (messages) send in a JSON format in a POST body.</li>
@@ -600,40 +615,40 @@ Transmission and reception of raw bitstreams over a physical medium` +
   },
   {
     question: 'Різниця між POST i GET?',
-      answer: `<table border="1" cellpadding="1" cellspacing="1">
-  <tr>
-    <th scope="col">GET</th>
-    <th scope="col">POST</th>
-  </tr>
-  <tr>
-    <td>Parameters remain in browser history because they are part of the URL</td>
-    <td>Parameters are not saved in browser history. We are sending them in body</td>
-  </tr>
-  <tr>
-    <td>can send but the parameter data is limited to what we can stuff into the request line (URL). Safest to use less than 2K of parameters, some servers handle up to 64K</td>
-    <td>Can send parameters, including uploading files, to the server.</td>
-  </tr>
-  <tr>
-    <td>Easier to hack for script kiddies</td>
-    <td>\tMore difficult to hack</td>
-  </tr>
-  <tr>
-    <td>Yes, only ASCII characters allowed.</td>
-    <td>No restrictions. Binary data is also allowed.</td>
-  </tr>
-  <tr>
-    <td>Less secured</td>
-    <td>POST is a little safer than GET because the parameters are not stored in browser history or in web server logs.</td>
-  </tr>
-  <tr>
-    <td>\tGET method should not be used when sending passwords or other sensitive information.</td>
-    <td>POST method used when sending passwords or other sensitive information.</td>
-  </tr>
-  <tr>
-    <td>Can be cached</td>
-    <td>Not cached</td>
-  </tr>
-</table>`
+    answer: `<table border="1" cellpadding="1" cellspacing="1">
+      <tr>
+        <th scope="col">GET</th>
+        <th scope="col">POST</th>
+      </tr>
+      <tr>
+        <td>Parameters remain in browser history because they are part of the URL</td>
+        <td>Parameters are not saved in browser history. We are sending them in body</td>
+      </tr>
+      <tr>
+        <td>can send but the parameter data is limited to what we can stuff into the request line (URL). Safest to use less than 2K of parameters, some servers handle up to 64K</td>
+        <td>Can send parameters, including uploading files, to the server.</td>
+      </tr>
+      <tr>
+        <td>Easier to hack for script kiddies</td>
+        <td>\tMore difficult to hack</td>
+      </tr>
+      <tr>
+        <td>Yes, only ASCII characters allowed.</td>
+        <td>No restrictions. Binary data is also allowed.</td>
+      </tr>
+      <tr>
+        <td>Less secured</td>
+        <td>POST is a little safer than GET because the parameters are not stored in browser history or in web server logs.</td>
+      </tr>
+      <tr>
+        <td>\tGET method should not be used when sending passwords or other sensitive information.</td>
+        <td>POST method used when sending passwords or other sensitive information.</td>
+      </tr>
+      <tr>
+        <td>Can be cached</td>
+        <td>Not cached</td>
+      </tr>
+    </table>`
   },
   {
     question: 'Болючий недолік JSON/RPC',
@@ -641,7 +656,10 @@ Transmission and reception of raw bitstreams over a physical medium` +
   },
   {
     question: 'XML/RPC',
-    answer: ''
+    answer: 'It\'s remote procedure calling using HTTP as the transport and XML as the encoding. XML-RPC is designed to be as simple as possible, while allowing complex data structures to be transmitted, processed and returned.<br>' +
+      'In XML-RPC, a client performs an RPC by sending an HTTP request to a server that implements XML-RPC and receives the HTTP response. A call can have multiple parameters and one result. The protocol defines a few data types for the parameters and result. Some of these data types are complex, i.e. nested. For example, you can have a parameter that is an array of five integers.\n' +
+      '<br>' +
+      'The parameters/result structure and the set of data types are meant to mirror those used in common programming languages.'
   },
   {
     question: 'Що таке REST',
@@ -727,7 +745,9 @@ Transmission and reception of raw bitstreams over a physical medium` +
   },
   {
     question: 'HATEOAS Driven REST APIs',
-    answer: ``
+    answer: `The term HATEOAS stands for the phrase Hypermedia As The Engine Of Application State. To understand this further, we first need to understand the meaning of Hypermedia.
+    <br>The single most important reason for HATEOAS is loose coupling. If a consumer of a REST service needs to hard-code all the resource URLs, then it is tightly coupled with your service implementation. Instead, if you return the URLs, it could use for the actions, then it is loosely coupled. There is no tight dependency on the URI structure, as it is specified and used from the response.
+    <br>The main reason I find HATEOAS useful is because it allows the backend to decide which actions are available so that the UI does not need to know the business logic. For example: a link to withdraw will be hidden if the account is below an amount that depends on many factors. The UI does not have to check the account balance, and check if the user has overdraft protection or keep changing the UI as the requirements change.`
   },
   {
     question: 'Недоліки REST',
@@ -735,7 +755,56 @@ Transmission and reception of raw bitstreams over a physical medium` +
   },
   {
     question: 'REST vs SOAP',
-    answer: ``
+    answer: `<table class="table table-striped" border="1" cellpadding="1" cellspacing="1" role="table">
+      <tbody>
+      <tr>
+      <th scope="col"><strong>SOAP</strong></th>
+      <th scope="col"><strong>REST</strong></th>
+      </tr>
+      <tr>
+      <td>SOAP stands for Simple Object Access Protocol</td>
+      <td>REST stands for Representational State Transfer</td>
+      </tr>
+      <tr>
+      <td>SOAP is a protocol. SOAP was designed with a specification. It includes a WSDL file which has the required information on what the web service does in addition to the location of the web service.</td>
+      <td>REST is an Architectural style in which a web service can only be treated as a RESTful service if it follows the constraints of being<p></p>
+      <ol>
+      <li>Client Server</li>
+      <li>Stateless</li>
+      <li>Cacheable</li>
+      <li>Layered System</li>
+      <li>Uniform Interface</li>
+      </ol>
+      </td>
+      </tr>
+      <tr>
+      <td>SOAP cannot make use of REST since SOAP is a protocol and REST is an architectural pattern.</td>
+      <td>REST can make use of SOAP as the underlying protocol for web services, because in the end it is just an architectural pattern.</td>
+      </tr>
+      <tr>
+      <td>SOAP uses service interfaces to expose its functionality to client applications. In SOAP, the WSDL file provides the client with the necessary information which can be used to understand what services the web service can offer.</td>
+      <td>REST use Uniform Service locators to access to the components on the hardware device. For example, if there is an object which represents the data of an employee hosted on a URL as http://demo.guru99  , the below are some of URI that can exist to access them.<p></p>
+      </td>
+      </tr>
+      <tr>
+      <td>SOAP can only work with XML format. As seen from SOAP messages, all data passed is in XML format.</td>
+      <td>REST permits different data format such as Plain text, HTML, XML, JSON, etc. But the most preferred format for transferring data is JSON.</td>
+      </tr>
+      </tbody>
+      </table>`
+  },
+  {
+    question: 'REST vs GraphQL',
+    answer: `<div>
+    <h4>Key Differences between GraphQL and REST</h4>
+    <ul>
+    <li>GraphQL is an application layer server-side technology that is used for executing queries with existing data, while REST is a software architectural style that defines a set of constraints for creating Web services.</li>
+    <li>GraphQL can be organized in terms of a schema, whereas REST can be arranged in terms of endpoints.</li>
+    <li>The development speed in GraphQL is fast, while the development speed in REST is Slow.</li>
+    <li>The message format for GraphQL mutations should be a string, while the message format for REST mutations can be anything.</li>
+    <li>GraphQL uses metadata for query validation, whereas REST does not have machine-readable metadata cacheable.</li>
+    </ul>
+    </div>`
   },
   {
     question: 'Що таке GraphQL. Pros & Cons',
@@ -758,7 +827,14 @@ Transmission and reception of raw bitstreams over a physical medium` +
     </ul><br>A simple GraphQL server comes without a built-in caching or batching mechanism.
     <br>Since in GraphQL there is no built-in solution, the developer also needs to handle pagination and authorization.
     Unlike GraphQL, the great advantage of REST API is that it's pretty clear and easy to understand. It’s highly scalable, simple, and easy to modify and extend.
-    <br>
+    <br><br>
+    It is statically typed, so you do not need to define variable before using it.<br>
+    GraphQL can decouple frontend from backend.<br>
+    No over or under fetching of data.<br>
+    It is language and HTTP agnostic.<br>
+    Documentation of GraqphQL comes with no extra cost.<br>
+    It helps you to save bandwidth.
+    <br><br>
     React framework Gatsby uses GraphQL. верне 200 статус навіть якщо еррорка, бо треба хендлити вручну. Завжди шлеться тільки POST request`
   },
   {
@@ -768,42 +844,42 @@ Transmission and reception of raw bitstreams over a physical medium` +
   {
     question: 'What\'s Open API?',
     answer: `The OpenAPI Specification is a standard format to define structure and syntax REST APIs. OpenAPI documents are both machine and human-readable, which enables anyone to easily determine how each API works. Engineers building APIs can use APIs to plan and design servers, generate code and implement contract testing. Former Swagger specification.
-<br>
-Pros <br>
-Generate accurate documentation<br>
-Create stub code for API development<br>
-Build mock servers to prototype the interface<br>
-Test that API requests and responses match the intended contract`
+      <br>
+      Pros <br>
+      Generate accurate documentation<br>
+      Create stub code for API development<br>
+      Build mock servers to prototype the interface<br>
+      Test that API requests and responses match the intended contract`
   },
   {
     question: 'Whats Swagger?',
     answer: `Set of tools for work with OpenAPI.
-<br>
-Tools<br>
-Swagger Editor - API editor for designing APIs with the OpenAPI Specification<br>
-Swagger UI - Visualize OpenAPI Specification definitions in an interactive UI<br>
-Swagger Codegen - Generate server stubs and client SDKs from OpenAPI Specification definitions
-<br><br>
-Known limitations<br>
-Cannot be used for documenting APIs with one URL and one method (level 0 from the Richardson Maturity Model HTTP), e.g., JSON-RPC`
+    <br>
+    Tools<br>
+    Swagger Editor - API editor for designing APIs with the OpenAPI Specification<br>
+    Swagger UI - Visualize OpenAPI Specification definitions in an interactive UI<br>
+    Swagger Codegen - Generate server stubs and client SDKs from OpenAPI Specification definitions
+    <br><br>
+    Known limitations<br>
+    Cannot be used for documenting APIs with one URL and one method (level 0 from the Richardson Maturity Model HTTP), e.g., JSON-RPC`
   },
   {
     question: 'What is apiDoc?',
     answer:`It positions itself as Inline Documentation for RESTful web APIs. apiDoc creates documentation from API annotations in your source code.
-<br><br>
-Pros<br>
-It generates an API web page as structured documentation.<br>
-It supports versioning and comparison between versions.<br>
-You possibly may use it with JSON-RPC as well.<br><br>
-Cons<br>
-As far as I got from their presentation, support only Code first approach.<br>
-It's Less powerful than Swagger tools.`
+      <br><br>
+      Pros<br>
+      It generates an API web page as structured documentation.<br>
+      It supports versioning and comparison between versions.<br>
+      You possibly may use it with JSON-RPC as well.<br><br>
+      Cons<br>
+      As far as I got from their presentation, support only Code first approach.<br>
+      It's Less powerful than Swagger tools.`
   },
   {
     question: 'В чому різниця Open API і Swagger?',
     answer: `
-Open API це специфікація - описує формат даних,
-Swagger - це тула яка дозволяє генерити специфікацію і юзати її`
+      Open API це специфікація - описує формат даних,
+      Swagger - це тула яка дозволяє генерити специфікацію і юзати її`
   },
   {
     question: 'What is Postman? How to use?',
@@ -815,8 +891,8 @@ Swagger - це тула яка дозволяє генерити специфі�
   {
     question: 'How to organize work with backend and frontend. Approaches',
     answer: `Contract-first/code-first
-Ми можемо робити версії Апішки також
-+ є різні падходи версійності (але це більш бекендне + це додаткове комплексіті, а це боль)`
+      Ми можемо робити версії Апішки також
+      + є різні падходи версійності (але це більш бекендне + це додаткове комплексіті, а це боль)`
   },
   {
     question: 'Contract-first/code-first',
@@ -915,17 +991,17 @@ Swagger - це тула яка дозволяє генерити специфі�
   {
     question: 'Що таке OWASP TOP 10. Перерахувати їх.',
     answer: `The Open Web Application Security Project (OWASP) is an open community dedicated to enabling organizations to develop, purchase, and maintain applications and APIs that can be trusted.<br>
-    Top 10 vulnerabilities according to OWASP TOP 10 are : <br>
-Broken Access Control<br>
-Cryptographic Failures or older name Sensitive Data Exposure<br>
-Injection<br>
-Insecure Design<br>
-Security Misconfiguration <br>
-Vulnerable and Outdated Components <br>
-Identification and Authentication Failures <br>
-Software and Data Integrity Failures <br>
-Security Logging and Monitoring Failures  <br>
-Server-Side Request Forgery `
+      Top 10 vulnerabilities according to OWASP TOP 10 are : <br>
+      Broken Access Control<br>
+      Cryptographic Failures or older name Sensitive Data Exposure<br>
+      Injection<br>
+      Insecure Design<br>
+      Security Misconfiguration <br>
+      Vulnerable and Outdated Components <br>
+      Identification and Authentication Failures <br>
+      Software and Data Integrity Failures <br>
+      Security Logging and Monitoring Failures  <br>
+      Server-Side Request Forgery `
   },
   {
     question: 'З якими ішьюсами стикалась на проекті.',
@@ -950,9 +1026,9 @@ Server-Side Request Forgery `
   {
     question: 'Які є тули щоб превентати секюріті ішьюс? Статік енд динамік секюріті чек?',
     answer: `SonarQube - статичний <br>
-BluckDuck i VeraCode - динамічний<br><br>
-Статичний - без запуску код<br>
-Динамічний - в ран таймі`
+      BluckDuck i VeraCode - динамічний<br><br>
+      Статичний - без запуску код<br>
+      Динамічний - в ран таймі`
   },
   {
     question: 'Broken Access Control атака? Як превентати?',
@@ -1007,7 +1083,7 @@ BluckDuck i VeraCode - динамічний<br><br>
     answer: ``
   },
   {
-    question: 'Яка у мене на проекті ауторизаціяю Який auth type.',
+    question: 'Яка у мене на проекті ауторизація. Який auth type.',
     answer: ``
   },
   {
@@ -1028,6 +1104,10 @@ BluckDuck i VeraCode - динамічний<br><br>
   },
   {
     question: 'Bearer VS JWT token',
+    answer: ``
+  },
+  {
+    question: 'Angular & Security',
     answer: ``
   }
 ];
