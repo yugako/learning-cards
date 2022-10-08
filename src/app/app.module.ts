@@ -5,16 +5,24 @@ import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
 import { FormsModule } from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './views/home/home.component';
+import { TopicSingleComponent } from './views/topic-single/topic-single.component';
+import { HumanSlugPipe } from './pipes/human-slug.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent
+    CardComponent,
+    HomeComponent,
+    TopicSingleComponent,
+    HumanSlugPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

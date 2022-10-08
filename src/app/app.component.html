@@ -1,14 +1,8 @@
+<header>
+  <h2>Асесмент за 60с</h2>
+  <p>
+    <em>Зроблено з любовʼю для моєї бусіньки 💞</em>
+  </p>
+</header>
 
-
-<div class="cards">
-
-  <card
-    *ngFor="let card of learningCards"
-    [question]="card.question"
-    [answer]="card.answer"
-  ></card>
-</div>
-<div class="buttons">
-  <button [disabled]="start === 0" (click)="calcLearningCards(0)">Prev</button>
-  <button [disabled]="end >= cards.length" (click)="calcLearningCards(1)">Next</button>
-</div>
+<router-outlet></router-outlet>
