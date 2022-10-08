@@ -976,7 +976,9 @@ Swagger - це тула яка дозволяє генерити специфі�
     <li>
     <p><strong>DNS Spoofing.</strong> Similar to the way ARP resolves IP addresses to MAC addresses on a LAN, DNS resolves domain names to IP addresses. When using a DNS spoofing attack, the attacker attempts to introduce corrupt DNS cache information to a host in an attempt to access another host using their domain name.</p>
     </li>
-    </ul>`
+    </ul>`,
+    category: "security"
+
   },
   {
     question: 'Які є методи засоби для взлому MITM',
@@ -994,7 +996,8 @@ Swagger - це тула яка дозволяє генерити специфі�
     <li>
     <p><strong>SSL Stripping.</strong> The SSL Strip takes advantage of the way most users come to SSL websites. The majority of visitors connect to a website’s page that redirects through a 302 redirect, or they arrive on an SSL page via a link from a non-SSL site. If the victim wants, for instance, to buy a product and types the URL <a href="http://www.buyme.com" rel="nofollow">www.buyme.com</a> in the address bar, the browser connects to the attacker's machine and waits for a response from the server. In an SSL Strip, the attacker, in turn, forwards the victim’s request to the online shop’s server and receives the secure HTTPS payment page. For example <a href="https://www.buyme.com" rel="nofollow">https://www.buyme.com</a>. At this point, the attacker has complete control over the secure payment page. He downgrades it from HTTPS to HTTP and sends it back to the victim’s browser. The browser is now redirected to <a href="http://www.buyme.com" rel="nofollow">http://www.buyme.com</a>. From now onward, all the victim’s data will be transferred in plain text format, and the attacker will be able to intercept it.</p>
     </li>
-    </ul>`
+    </ul>`,
+    category: "security"
   },
   {
     question: 'Як превентнути MITM атаку',
@@ -1015,23 +1018,28 @@ Swagger - це тула яка дозволяє генерити специфі�
     <li>
     <p><strong>Public Key Pair Based Authentication.</strong> Man-in-the-middle attacks typically involve spoofing something or another. Public key pair based authentication like RSA can be used in various layers of the stack to help ensure whether the things you are communicating with are actually the things you want to be communicating with.</p>
     </li>
-    </ul>`
+    </ul>`,
+    category: "security"
   },
   {
     question: 'Принцип нульової довіри.',
-    answer: `Zero trust is a security strategy that assumes all users, devices and transactions are already compromised.`
+    answer: `Zero trust is a security strategy that assumes all users, devices and transactions are already compromised.`,
+    category: "security"
   },
   {
     question: 'Що таке CORS',
-    answer: ``
+    answer: ``,
+    category: "security"
   },
   {
     question: 'Які обмеження ми можемо встановити використовуючи CORS',
-    answer: ``
+    answer: ``,
+    category: "security"
   },
   {
     question: 'За допомогою якого метода відправляється Preflight request.',
-    answer: `OPTIONS`
+    answer: `OPTIONS`,
+    category: "security"
   },
   {
     question: 'Що таке OWASP TOP 10. Перерахувати їх.',
@@ -1046,109 +1054,155 @@ Vulnerable and Outdated Components <br>
 Identification and Authentication Failures <br>
 Software and Data Integrity Failures <br>
 Security Logging and Monitoring Failures  <br>
-Server-Side Request Forgery `
+Server-Side Request Forgery `,
+    category: "security"
   },
   {
     question: 'З якими ішьюсами стикалась на проекті.',
-    answer: ``
+    answer: ``,
+    category: "security"
   },
   {
     question: 'Що таке інджекшини. Як їх превентати?',
-    answer: ``
+    answer: ``,
+    category: "security"
   },
   {
     question: 'Як захиститись від фішингу?',
-    answer: ``
+    answer: ``,
+    category: "security"
   },
   {
     question: 'XSS атака. Що це? Її види, як захиститись (як юзер і як дев)?',
-    answer: ``
+    answer: ``,
+    category: "security"
   },
   {
     question: 'Vulnerable and Outdated Components атака. Як щоб превентати?',
-    answer: ``
+    answer: ``,
+    category: "security"
   },
   {
     question: 'Які є тули щоб превентати секюріті ішьюс? Статік енд динамік секюріті чек?',
     answer: `SonarQube - статичний <br>
 BluckDuck i VeraCode - динамічний<br><br>
 Статичний - без запуску код<br>
-Динамічний - в ран таймі`
+Динамічний - в ран таймі`,
+    category: "security"
+
   },
   {
     question: 'Broken Access Control атака? Як превентати?',
-    answer: ``
+    answer: ``,
+    category: "security"
+
   },
   {
     question: 'Sensitive Data Exposure (old name). Cryptographic Failures атака. Як превентати?',
-    answer: ``
+    answer: ``,
+    category: "security"
+
   },
   {
     question: 'Що таке Sensitive data?',
-    answer: `Sensitive data is confidential information that must be kept safe and out of reach from all outsiders unless they have permission to access it. (date of birth, password, credit cards etc)`
+    answer: `Sensitive data is confidential information that must be kept safe and out of reach from all outsiders unless they have permission to access it. (date of birth, password, credit cards etc)`,
+    category: "security"
+
   },
   {
     question: 'Insecure Design атака. Як превентати?',
-    answer: ``
+    answer: ``,
+    category: "security"
+
   },
   {
     question: 'SSDLC',
-    answer: ``
+    answer: ``,
+    category: "security"
+
   },
   {
     question: 'Security Misconfiguration атака. Як превентати?',
-    answer: ``
+    answer: ``,
+    category: "security"
+
   },
   {
     question: 'Яка різниця між аутентифікація і авторизація.',
-    answer: ``
+    answer: ``,
+    category: "security"
+
   },
   {
     question: 'Identification and Authentication Failures атака. Як привентати?',
-    answer: ``
+    answer: ``,
+    category: "security"
+
   },
   {
     question: 'Software and Data Integrity Failures (old name - Insecure Deserialization) атака. Як превентати?',
-    answer: ``
+    answer: ``,
+    category: "security"
+
   },
   {
     question: 'Що таке сереалізація і десереалізація?',
-    answer: ``
+    answer: ``,
+    category: "security"
+
   },
   {
     question: 'Security Logging and Monitoring Failures (old name - Insufficient Logging & Monitoring) атака. Як привентати?',
-    answer: ``
+    answer: ``,
+    category: "security"
+
   },
   {
     question: 'Server-Side Request Forgery атака. Як привентати?',
-    answer: ``
+    answer: ``,
+    category: "security"
+
   },
   {
     question: 'AUTH types.',
-    answer: ``
+    answer: ``,
+    category: "security"
+
   },
   {
     question: 'Яка у мене на проекті ауторизаціяю Який auth type.',
-    answer: ``
+    answer: ``,
+    category: "security"
+
   },
   {
     question: 'Що таке OAUTH? 1.0 / 2.0',
-    answer: ``
+    answer: ``,
+    category: "security"
+
   },
   {
     question: 'OAUTH переваги',
-    answer: ``
+    answer: ``,
+    category: "security"
+
   },
   {
     question: 'Що таке Single sign-on (SSO)?',
-    answer: ``
+    answer: ``,
+    category: "security"
+
   },
   {
     question: 'Що таке PKCE?',
-    answer: ``
+    answer: ``,
+    category: "security"
+
   },
   {
     question: 'Bearer VS JWT token',
-    answer: ``
+    answer: ``,
+    category: "security"
+
   }
 ];
