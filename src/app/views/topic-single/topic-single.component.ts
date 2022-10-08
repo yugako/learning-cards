@@ -14,14 +14,18 @@ export class TopicSingleComponent implements OnInit {
   start = 0;
   end = this.step;
 
+  public topicId!: string | null;
+
   constructor(
     private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
-    const topicId = this.route.snapshot.paramMap.get('slug');
+    this.topicId = this.route.snapshot.paramMap.get('slug') ?? '';
 
-    this.cards = this.getMixedCards().filter(({category}) => !category || category === topicId);
+    this.cards = this.getMixedCards().filter(({category}) => this.topicId === 'all'
+      ? !!category
+      : !category || category === this.topicId);
   }
 
   get learningCards() {
