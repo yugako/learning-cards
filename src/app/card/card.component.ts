@@ -22,6 +22,11 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 export class CardComponent implements OnInit {
   @Input() question = '';
   @Input() answer = '';
+  
+  @HostListener('window:keyup', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    if (['ArrowUp', 'ArrowDown'].includes(event.code)) this.toggleFlip();
+  }
 
   constructor() { }
 
