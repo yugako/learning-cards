@@ -16,6 +16,13 @@ export class TopicSingleComponent implements OnInit {
 
   public topicId!: string | null;
 
+  @HostListener('window:keyup', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    if (!['ArrowRight', 'ArrowLeft'].includes(event.code)) return;
+
+    this.calcLearningCards(event.code === 'ArrowRight' ? 1 : 0);
+  }
+
   constructor(
     private route: ActivatedRoute
   ) {}
