@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, HostListener, Input} from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 
@@ -19,18 +19,13 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
     ])
   ]
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
   @Input() question = '';
   @Input() answer = '';
-  
+
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
     if (['ArrowUp', 'ArrowDown'].includes(event.code)) this.toggleFlip();
-  }
-
-  constructor() { }
-
-  ngOnInit() {
   }
 
   flip: string = 'inactive';
