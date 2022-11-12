@@ -2138,11 +2138,11 @@ Bearer tokens can be included in an HTTP request in different ways, one of them 
     answer: `
     <div class="callout is-helpful">
       <header>Best practices</header>
-      <table>
+      <table border="1" cellpadding="1" cellspacing="1" role="table">
       <thead>
       <tr>
-      <th align="left">Practices</th>
-      <th align="left">Details</th>
+      <th align="left" scope="col">Practices</th>
+      <th align="left" scope="col">Details</th>
       </tr>
       </thead>
       <tbody>
@@ -2161,8 +2161,9 @@ Bearer tokens can be included in an HTTP request in different ways, one of them 
       </tbody>
       </table>
       </div>
-
-
+      <br>
+      <img height="480px" width="600px"
+      src="https://snyk.io/wp-content/uploads/Screen-Shot-2020-08-10-at-9.21.58-1536x1092.png" alt="">
     `,
     category: 'security'
   },
@@ -2230,12 +2231,12 @@ Bearer tokens can be included in an HTTP request in different ways, one of them 
     Both async and defer have one common thing: downloading of such scripts doesn’t block page rendering. So the user can read page content and get acquainted with the page immediately.
 
     But there are also essential differences between them: <br>
-    <table>
+    <table border="1" cellpadding="1" cellspacing="1" role="table">
     <thead>
     <tr>
-    <th></th>
-    <th>Order</th>
-    <th><code>DOMContentLoaded</code></th>
+    <th scope="col"></th>
+    <th scope="col">Order</th>
+    <th scope="col"><code>DOMContentLoaded</code></th>
     </tr>
     </thead>
     <tbody>
@@ -2679,42 +2680,1437 @@ You can see the current usage of memory, make a snapshot, profile memory.`,
   },
   {
     question: 'Що таке SPA & MPA? Різниця',
-    answer: ``,
+    answer: `
+        Websites that are built with single-page applications (SPAs) only consist of one single page. Basically, when the user is surfing the website mostly wherever he chooses to press – he remains on the same platform. What SPAs are so great about, is that the page does not reload during its use and does not rely on navigating through different websites. If you have been on platforms like Facebook, Gmail, Twitter, GitHub and so on, you have already met the best examples of SPA. It is one of its’ greatest features that when the page loads, only data is sent back-and-forth, and the website executes everything within itself rather than going through servers every time.
+    <br>
+    Different from SPAs, multi-page applications (MPAs) are complex websites. To put it more simply, it is a traditional web application that reloads the entire page whenever the user interacts with the website. Each time that the data is exchanged, the application makes a request from the server to display different information in the browser. The main reason why it differs so much from the single-page applications, MPAs take time to execute the information exchanges, meaning that the user experience can be harmed if the servers connect slowly or the internet connection is poor. If you want to see an example of how multi-page applications work, head over to the websites like Amazon, eBay, or every other traditional website. You’ll notice that each time you press on the website, you’re being redirecting to another page. MPA sites consist of many micro-websites and subsections to distribute content across the platform.
+    <br>
+    Hybrid - MPA, and SPA combined. In the Hybrid app, each page has to be compiled and could share some resources. Every page has own JS routing like wizards or subcomponents. Data is loaded both during page load and AJAX.
+    `,
     category: 'web-application-design'
   },
   {
-    question: 'Що таке PWA?',
-    answer: ``,
-    category: 'web-application-design'
-  },
-  {
-    question: 'Де легше реалізувати секрність в SPA чи MPA? ЧОМУ?',
-    answer: ``,
+    question: 'Де легше реалізувати секюність в SPA чи MPA? ЧОМУ?',
+    answer: `
+    Depends on.. I guess MPA
+    SPA:<br>
+    All you have to do to keep your page safe is secure data endpoints which is much faster but not necessarily safer. SPA’s are more prone to hacker attacks, as they run on JavaScript which doesn’t perform code compilation making it more vulnerable to malware.
+
+    Compared to the “traditional” application, SPA is less secure. Due to Cross-Site Scripting (XSS), it enables attackers to inject client-side scripts into the web application by other users.
+
+    You can secure your data endpoints and separate the JS that gets downloaded by a client into multiple isolated pieces.
+
+    This way, attackers won’t be able to access all your code at once.
+    <br><br>
+    MPA:<br>
+    Maintaining security may become a real challenge because developers have to secure each separate page.
+    `,
     category: 'web-application-design'
   },
   {
     question: 'Pros & Cons of SPA & MPA',
-    answer: ``,
+    answer: `
+        <table border="1" cellpadding="1" cellspacing="1" role="table">
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">SPA</th>
+          <th scope="col">MPA</th>
+        </tr>
+        <tr>
+          <td>Ideal For</td>
+          <td>Ideal for a company with a single product to get real-time experience without page refresh. </td>
+          <td>Ideal for a large company that offers a wide variety of products, if you need a lot of user interaction and technical features in your app, large e-commerce stores and marketplaces like eBay, huge web portals.
+
+      Ideal for websites that have a lot of content (such as news portals) and require flawless SEO.</td>
+        </tr>
+          <tr>
+          <td>Pros</td>
+          <td><ul>
+      <li>Sleek UX</li>
+      <li>Speed</li>
+      <li>Offline functionality</li>
+      <li>Mobile adaptability</li>
+      <li>Decoupled Backend and Frontend</li>
+      </ul></td>
+          <td><ul>
+      <li>SEO</li>
+      <li>JavaScript Dependency</li>
+      <li>Memory leaks</li>
+      </ul></td>
+        </tr>
+        <tr>
+          <td>Cons</td>
+          <td><ul>
+      <li>Simple SEO</li>
+      <li>Fast launch</li>
+      <li>Many existed boxed solutions</li>
+      <li>Works without javascript</li>
+      <li>Wide options for security configuration</li>
+      </ul></td>
+          <td><ul>
+      <li>Slowness due to the full page reload</li>
+      <li>Coupled Backend and Frontend</li>
+      <li>Complex Development process</li>
+      </ul></td>
+        </tr>
+        <tr>
+          <td>Speed</td>
+          <td>SPA is quite fast, as most resources (HTML+CSS+Scripts) are only loaded once throughout the lifespan of the application. Only data is transmitted back and forth and no full page refreshes are occurring as the user navigates through the application
+
+      At the same time SPA can be slow due to client-side rendering. Before your browser can render the page, it has to load bulky JS frameworks. This could take a while, especially for the large application. But after the first render, SPAs become much faster than MPAs.
+
+      Fortunately, there are ways to speed up the SPA initialization such as loading assets dynamically, minimizing the scripts, etc
+
+      </td>
+          <td>MPA is much slow from User Experience perspective as the browser must reload the entire page from scratch whenever the user wants to access new data or moves to a different part of the website.</td>
+        </tr>
+        <tr>
+          <td>Scalability</td>
+          <td>In SPAs, the business logic is built into separate components that are easy to develop and maintain. But making changes to the app’s architecture is a whole other story. A single feature may consist of several components and altering a commonly used element can affect other parts of the application.
+
+      That’s why you have to take into account the future changes to the SPA’s functionality during the planning stage. If you have a clear vision of where your application is heading, the developers will be able to factor in the possible changes before the architecture is set in stone.</td>
+          <td>With the traditional approach (MPA), the application’s functionality is spread over multiple pages. You can gradually add content and expand the page count. It’s also relatively easy to alter a part of your MPA without affecting the other pages.
+
+      If you want, for example, to change the application’s framework, you can do it page by page until the whole MPA is redesigned.</td>
+        </tr>
+        <tr>
+          <td>Maintainability</td>
+          <td>The development is simplified and streamlined. There is no need to write code to render pages on the server. It is much easier to get started because you can usually kick off development from a file file://URI, without using any server at all.</td>
+          <td>The development becomes quite complex. The developer needs to use frameworks for either client and server side. This results in a long time of application development.
+
+      Testing gets rigorous, as there are no clear distinctions between User Interface and data.</td>
+        </tr>
+        <tr>
+          <td>Deployment</td>
+          <td>A single page application is super-simple to deploy: it's really just one index.html file, with a CSS bundle and a Javascript bundle.
+
+      These 3 static files can be uploaded to any static content server like Apache, Nginx, Amazon S3 or Firebase Hosting.</td>
+          <td>Deployment and configuration could be complicated and depend on the boxed solution and technology stack. For example, Magento deployment for an e-commerce web application or Elgg for social networks.</td>
+        </tr>
+      </table>
+
+    `,
     category: 'web-application-design'
   },
   {
     question: 'Що таке SSR? Pros & Cons',
-    answer: ``,
+    answer: `
+SSR is not a new concept. It has been used since the first backend solution, like PHP or JAVA. Server-side rendering is a method to render your website. When the user opens your page, his browser makes a request to the server, and the server generates ready to provide HTML. When the request is received on the server-side, it compiles everything. Every time the client navigates to a different route, the server will do the work all over again.
+        <img  width="600" src="https://res.cloudinary.com/practicaldev/image/fetch/s--Bdp-T1rh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/w46xh1vjb96yxz3gjlu9.png">
+
+    `,
     category: 'web-application-design'
   },
   {
-    question: 'Що таке SSR? Pros & Cons',
-    answer: ``,
+    question: 'Що таке CSR? Pros & Cons',
+    answer: `
+    CSR - With a client-side rendering solution, when the user opens your website, his browser makes a request to the server, and the user gets a response with a single HTML file without any content, loading screen, e.t.c. It’s a blank page until the browser fetches all linked JavaScripts and lets the browser compile everything before rendering the content. If there is some data which needs to be rendered to the page, the client will make a request to the api to take the data and then render it to the page. If the client navigates to a different route, the server will not send the page again, instead, the client will re-render the page according to the route that client requested
+    <img  width="600" src="https://res.cloudinary.com/practicaldev/image/fetch/s--U_LYEgDh--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/wx32o0wtgqa3lxv9izgk.png">
+
+    `,
+    category: 'web-application-design'
+  },
+  {
+    question: 'SSR vs CSR?',
+    answer: `
+      <table style="width:100%"  border="1" cellpadding="1" cellspacing="1" role="table">
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">CSR</th>
+          <th scope="col">SSR</th>
+        </tr>
+        <tr>
+          <td>Ideal For</td>
+          <td><ul><li><span style="color: rgb(0,0,128);">If you building a SPA (single page application), and you don’t want to configure everything on the server side like: i18n, router e.t.c. you can just use&nbsp;<strong>create-react-app, angular-cli, vue-cli, </strong>etc</span></li><li><span style="color: rgb(0,0,128);">if your site has rich interactions, CSR may fit your needs more</span></li></ul></td>
+          <td><ul><li><span style="color: rgb(0,0,128);">If you want to build site which is mostly static (blog, portfolio, landing page), use frameworks like&nbsp;<strong>Gatsby</strong>, it’s not SSR, but it pre-renders the website into HTML at the build time</span></li><li><span style="color: rgb(0,0,128);">If you want to build a web app and you care about SEO, easier social media optimization and faster render for user you should think about SSR and framework like&nbsp;<strong>next.js, nuxt.js, </strong>etc</span></li><li><span style="color: rgb(0,0,128);">if the content of your website doesn't need much user interaction, SSR might be the right choice</span></li></ul></td>
+        </tr>
+        <tr>
+          <td>Pros</td>
+          <td><ul style="text-align: left;"><li><span style="color: rgb(0,0,128);">Fast render after initial load</span></li><li><span style="color: rgb(0,0,128);">Faster navigation</span></li><li><span style="color: rgb(0,0,128);">Lower server load</span></li><li><span style="color: rgb(0,0,128);">Rich site interactions</span></li><li><span style="color: rgb(0,0,128);">Robust JS library selection</span></li><li><span style="color: rgb(0,0,128);">Remarkable for web apps</span></li></ul></td>
+          <td><ul style="text-align: left;"><li><span style="color: rgb(0,0,128);">SEO friendly – SSR guarantees your pages are easily indexable by search engines</span></li><li><span style="color: rgb(0,0,128);">Better performance for the user – User will see the content faster</span></li><li><span style="color: rgb(0,0,128);">Social Media Optimization: When people try to post your link on Facebook, Twitter, etc. then a nice preview will show up with the page title, description, and image.</span></li><li><span style="color: rgb(0,0,128);">Shared code with backend node</span></li><li><span style="color: rgb(0,0,128);">User-machine is less busy</span></li></ul></td>
+        </tr>
+        <tr>
+          <td>Cons</td>
+          <td><ul style="text-align: left;"><li><span style="color: rgb(0,0,128);">Slower initial load</span></li><li><span style="color: rgb(0,0,128);">Unpredictable performance – you never know if your user will open and ‘compile’ your website on a mobile device with a very slow internet connection or not updated browser</span></li><li><span style="color: rgb(0,0,128);">Client-side routing solutions can delay web crawling.</span></li><li><span style="color: rgb(0,0,128);">SEO – if you not implemented correctly</span></li><li><span style="color: rgb(0,0,128);">Initial req loads the page, CSS, layout, js,</span></li><li><span style="color: rgb(0,0,128);">Some or all content is not included</span></li><li><span style="color: rgb(0,0,128);">Higher memory consumtion</span></li></ul></td>
+          <td><ul style="text-align: left;"><li><span style="color: rgb(0,0,128);">TTFB (Time to first byte) is slower; your server has to spend some time to prepare HTML for your page instead of sending almost empty HTML doc with link to javascript</span></li><li><span style="color: rgb(0,0,128);">The server will be busier, can execute fewer request per second</span></li><li><span style="color: rgb(0,0,128);">HTML doc will be bigger</span></li><li><span style="color: rgb(0,0,128);">The page is viewable sooner, but it’s not interactive and the beginning, a user has to wait until react will be done executing</span></li><li><span style="color: rgb(0,0,128);">Full page reload after routes change</span></li><li><span style="color: rgb(0,0,128);">Non-rich site interactions</span></li></ul></td>
+        </tr>
+        <tr>
+          <td>Speed</td>
+          <td>In client-side-rendering, non-content can be displayed until browser will download all the js files.
+
+      A blank page is much longer on client-side-rendering, as a developer you have to avoid it using some loader, or loading screen
+
+      On the other hand, CSR responds faster when loading subsequent web pages</td>
+          <td>In server-side-rendering user will get HTML rendered much faster than in client-side-rendering (First Contentful Paint). But while the page is rendered earlier and the customer can see the page sooner, they can’t really interact with it until JS is done executing. If the customer is really fast and clicks a button, the action won’t be executed until JS is done executing;</td>
+        </tr>
+        <tr>
+          <td>SEO (Search Engine Optimization)</td>
+          <td>CSR isn’t very SEO friendly. It’s primarily because the majority of single-page applications are run on JavaScript, which most search engines do not support. Web pages are indexed through “crawling” or “spidering”. Search engine crawlers download the page’s HTML files which makes static HTML web-pages are easier to rank. </td>
+          <td>SSR enables better website positioning as each page can be optimized for a different keyword. Also, meta tags can be included on every page – this positively impacts Google rankings. </td>
+        </tr>
+      </table>
+    `,
     category: 'web-application-design'
   },
   {
     question: 'Що таке Angular Universal?',
+    answer: `
+
+    Angular Universal is a technology that renders Angular applications on the server.
+
+A normal Angular application executes in the browser, rendering pages in the DOM in response to user actions. Angular Universal executes on the server, generating static application pages that later get bootstrapped on the client. This means that the application generally renders more quickly, giving users a chance to view the application layout before it becomes fully interactive.`,
+    category: 'web-application-design'
+  },
+  {
+    question: 'Чому при роботі з SSR ми можемо юзати менше різних бібліотек ніж при роботі з CSR?',
+    answer: `Бо багато бібліотек працюють з DOMом і в SSR ми такої можливості не маємо`,
+    category: 'web-application-design'
+  },
+  {
+    question: 'Які є варіанти комбінації SPA i MPA?',
     answer: ``,
     category: 'web-application-design'
   },
   {
-    question: '',
+    question: 'Що таке HTML streaming? (Більше до реакту, не обовязково)',
+    answer: `
+    HTML streaming dynamically caches parts of the HTML document without touching the <body> section that may have personalized elements and other factors which make it difficult to cache. This means visitors see the page is beginning to load in their browser very quickly even as Section is fetching the remainder of the HTML document from your origin server.
+
+HTML streaming works by combining the power of Varnish Cache and Lua to cache the <head> of the HTML document while dynamically pulling in the rest of the content through edge side includes. This allows for quick speed wins without the need to make AJAX calls or code changes.
+
+For Magento 1.x users who want to leverage the speed of Varnish Cache without using the more complex Turpentine extension, HTML streaming is a great way to realize immediate speed wins with a quick implementation.
+    `,
+    category: 'web-application-design'
+  },
+  {
+    question: 'Що таке micro-fronted? Pros and Cons',
+    answer: `
+      <div class="markdown-body">
+      Micro frontend is an architectural and organizational style (NOT a specific technology!!!) in which the front-end of the app is decomposed into individual, loosely coupled “micro apps” that can be built, tested, and deployed independently. Just like in the world of microservices where the backend is chopped into individual services.
+
+Simply put, each micro frontend is just code for a fragment — a separate feature — of the web page. These features are owned by independent teams, each having a distinct business area or mission it specialized in.
+                <h1><a id="user-content-micro-frontends" class="anchor" aria-hidden="true" href="#micro-frontends"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Micro-frontends</h1>
+        <h2><a id="user-content-pros-and-cons" class="anchor" aria-hidden="true" href="#pros-and-cons"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Pros and Cons</h2>
+        <p>Pros</p>
+        <ul>
+        <li>Smaller, more cohesive, and maintainable codebases</li>
+        <li>More scalable organizations with decoupled, autonomous teams</li>
+        <li>Incremental upgrades</li>
+        <li>Independent deployment</li>
+        </ul>
+        <p>Cons</p>
+        <ul>
+        <li>Payload size: Some implementations can lead to duplication of dependencies, increasing the number of bytes our users must download</li>
+        <li>Environment differences: The dramatic increase in team autonomy can cause fragmentation in the way your teams work</li>
+        <li>Operational and governance complexity</li>
+        </ul>
+        <h2><a id="user-content-integrations" class="anchor" aria-hidden="true" href="#integrations"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Integrations</h2>
+        <h3><a id="user-content-build-time-integration" class="anchor" aria-hidden="true" href="#build-time-integration"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Build-time integration</h3>
+        <p>One approach is to publish each micro frontend as a package and have the container application include them all as library dependencies.</p>
+        <p>This approach means that we have to re-compile and release every single micro frontend in order to release a change to any individual part of the product.</p>
+        <h3><a id="user-content-run-time-integration-via-iframes" class="anchor" aria-hidden="true" href="#run-time-integration-via-iframes"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Run-time integration via iframes</h3>
+        <p>One of the simplest approaches to composing applications together in the browser is the humble iframe.</p>
+        <p>By their nature, iframes make it easy to build a page out of independent sub-pages. They also offer a good degree of isolation in terms of styling and global variables not interfering with each other.</p>
+        <p>It can be difficult to build integrations between different parts of the application, so they make routing, history, and deep-linking more complicated, and they present some extra challenges to make your page fully responsive.</p>
+        <h3><a id="user-content-run-time-integration-via-javascript" class="anchor" aria-hidden="true" href="#run-time-integration-via-javascript"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Run-time integration via JavaScript</h3>
+        <p>Each micro frontend is included on the page using a <code>&lt;script&gt;</code> tag, and upon load exposes a global function as its entry-point. The container application then determines which micro frontend should be mounted, and calls the relevant function to tell a micro frontend when and where to render itself.</p>
+        <p>Unlike with build-time integration, we can deploy each of the bundle.js files independently. And unlike with iframes, we have full flexibility to build integrations between our micro frontends however we like.</p>
+        <h2><a id="user-content-common-for-all-parts-things" class="anchor" aria-hidden="true" href="#common-for-all-parts-things"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Common for all parts things</h2>
+        <h3><a id="user-content-styling" class="anchor" aria-hidden="true" href="#styling"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Styling</h3>
+        <p>BEM, pre-processor, CSS modules, CSS-in-JS.
+        Use any approach to avoid collisions.</p>
+        <h3><a id="user-content-shared-component-libraries" class="anchor" aria-hidden="true" href="#shared-component-libraries"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Shared component libraries</h3>
+        <p>Let the teams create their own components and after a while, some of them could be moved to the library.
+        Keep there dumb components only with a UI (not business) logic. There should be someone dedicated to take care of the library.</p>
+        <h3><a id="user-content-cross-application-communication" class="anchor" aria-hidden="true" href="#cross-application-communication"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Cross-application communication</h3>
+        <p>It's better to have them communicate as little as possible. You may do it these ways:</p>
+        <ol>
+        <li>Custom events allow micro frontends to communicate indirectly.</li>
+        <li>The React model of passing callbacks and data from the container application to the micro frontends.</li>
+        <li>Use the address bar as a communication mechanism.</li>
+        </ol>
+        <p>Avoid having any shared state.</p>
+        <p>You could implement some form of consumer-driven contracts so that each micro frontend can specify what it requires from other micro frontends.</p>
+        <h3><a id="user-content-backend-communication" class="anchor" aria-hidden="true" href="#backend-communication"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Backend communication</h3>
+        <p>One pattern that helps here is the BFF pattern, where each frontend application has a corresponding backend whose purpose is solely to serve the needs of that frontend.</p>
+        <p>The guiding principle here is that the team building a particular micro frontend shouldn't have to wait for other teams to build things for them. So if every new feature added to a micro frontend also requires backend changes, that's a strong case for a BFF, owned by the same team.</p>
+        <h3><a id="user-content-testing" class="anchor" aria-hidden="true" href="#testing"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Testing</h3>
+        <p>The obvious peculiarity is an integration testing of the various micro-frontends with the container application.</p>
+        <p>Use unit tests to cover low-level business logic and rendering logic, and functional/end-to-end tests just to validate that the page is assembled correctly.</p>
+
+              </div>
+    `,
+    category: 'web-application-design'
+  },
+  {
+    question: 'Whats monorep? Pros and Cons',
+    answer: `
+      <div class="markdown-body">
+                <h1><a id="user-content-monorepos" class="anchor" aria-hidden="true" href="#monorepos"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Monorepos</h1>
+      <p>Imagine that instead of a small app, you need to maintain a huge platform consisting of a lot of functional areas. If you are thinking about architecture, you will want to do two main things: Separate concerns and avoid code dupes.</p>
+      <h2><a id="user-content-monorepo-advantages" class="anchor" aria-hidden="true" href="#monorepo-advantages"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Monorepo Advantages</h2>
+      <ul>
+      <li>One place to store all configs and tests.</li>
+      <li>Easily refactor global features with atomic commits.</li>
+      <li>Simplified package publishing.</li>
+      <li>Easier dependency management.</li>
+      <li>Re-use code with shared packages while still keeping them isolated.</li>
+      </ul>
+      <h2><a id="user-content-monorepo-disadvantages" class="anchor" aria-hidden="true" href="#monorepo-disadvantages"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Monorepo Disadvantages</h2>
+      <ul>
+      <li>
+      <p>No way to restrict access only to some parts of the app.</p>
+      </li>
+      <li>
+      <p>Poor Git performance when working on large-scale projects</p>
+      <p><strong>Note</strong>: Nowadays, Facebook tries to resolve issues with VCS scalability by patching Mercurial and, probably soon, this won’t be such a big issue.</p>
+      </li>
+      <li>
+      <p>Higher build time.</p>
+      </li>
+      </ul>
+              </div>
+    `,
+    category: 'web-application-design'
+  },
+  {
+    question: 'Що таке PWA?',
+    answer: `A progressive web app (PWA) is the set of mobile web application development techniques that entails building apps that feel and look like native ones. Using a web stack (JS, HTML, and CSS), progressive web apps combine a rich functionality and smooth user experience associated with native apps. Simply put, PWA is the web app with the native-app flavor: After the installation, a user clicks on its icon on a device home screen and gets straight to the website.
+
+      The approach was introduced by Google in 2015, and since then has become a hot topic among engineers thanks to relatively simple development and effective user engagement.
+
+      <br>  <br>
+      <div class="markdown-body">
+                      <h1><a id="user-content-progressive-web-apps" class="anchor" aria-hidden="true" href="#progressive-web-apps"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Progressive Web Apps</h1>
+      <p>PWA is the web app with the native-app flavor: After the installation, a user clicks on its icon on a device home screen and gets straight to the website.</p>
+      <ul>
+      <li>The Web App manifest (JSON file)</li>
+      <li><a href="Workers">Service Worker</a></li>
+      </ul>
+      <h2><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Features</h2>
+      <ul>
+      <li>Full responsiveness and browser compatibility.</li>
+      <li>Connectivity independence (off-line mode).</li>
+      <li>Native app-like interface.</li>
+      <li>Push notifications.</li>
+      <li>Background synchronization.</li>
+      <li>Self-updates.</li>
+      <li>Safety (HTTPS).</li>
+      <li>Discoverability and easy installation.</li>
+      </ul>
+      <h2><a id="user-content-cons" class="anchor" aria-hidden="true" href="#cons"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Cons</h2>
+      <ul>
+      <li>Limited functionality and increased battery use compared to native apps</li>
+      <li>Search traffic losses due to no presence on app stores</li>
+      </ul>
+      <h2><a id="user-content-examples" class="anchor" aria-hidden="true" href="#examples"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Examples</h2>
+      <ul>
+      <li>The Washington Post</li>
+      <li>Shopify</li>
+      <li>Twitter</li>
+      </ul>
+      <h2><a id="user-content-links" class="anchor" aria-hidden="true" href="#links"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a><em>Links</em></h2>
+      <p>-<a href="https://www.altexsoft.com/blog/engineering/progressive-web-apps/" rel="nofollow">Progressive Web Apps: Core Features, Architecture, Pros and Cons</a></p>
+
+                    </div>
+
+`,
+    category: 'web-application-design'
+  },
+  {
+    question: 'Стрімінг обсервабли в ангулярі щоб пінганути юзера що нада апку обновити (pwa)',
     answer: ``,
     category: 'web-application-design'
+  },
+  {
+    question: 'Чи будуть проблеми з сервіс воркерами в PWA?',
+    answer: ``,
+    category: 'web-application-design'
+  },
+  {
+    question: 'Які тули знаєте для менежнення моно реп?',
+    answer: `<ul>
+    <li>
+    <strong>Basel</strong> is Google’s monorepo-oriented build system.</li>
+    <li>
+    <strong>Yarn</strong> is a JavaScript dependency management tool that supports monorepos through workspaces.</li>
+    <li>
+    <strong>Lerna</strong> is a tool for managing JavaScript projects with multiple packages, built on Yarn. Lerna is focused on linking multiple packages from the same project and managing npm publishing.</li>
+    <li>
+    <strong>Nx</strong> is an extensible dev tool for monorepos. It's focused on managing development workflow for multiple packages. Nx doesn't rebuild and retest everything on every commit - it only rebuilds what is necessary.</li>
+    </ul>`,
+    category: 'web-application-design'
+  },
+  {
+    question: 'Як вибрати фреймворк для проекту?\n',
+    answer: `
+    <div data-view-component="true" class="Layout-main">          <div id="wiki-body" class="gollum-markdown-content">
+    <div class="markdown-body">
+      <h1><a id="user-content-holy-war-choice-of-framework" class="anchor" aria-hidden="true" href="#holy-war-choice-of-framework"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Holy War: Choice of Framework</h1>
+      <p>Consider next:</p>
+      <ul>
+      <li>community, GitHub stars, repos, forks, components</li>
+      <li>documentation</li>
+      <li>support, new versions</li>
+      <li>popularity trends (npm, google, StackOverflow)</li>
+      <li>learning curve</li>
+      <li>features out of the box</li>
+      <li>extending with new features</li>
+      <li>scalable for big teams</li>
+      <li>versions backward compatibility</li>
+      <li>native/mobile apps support?</li>
+      <li>bundle size</li>
+      <li>flexible/opinionated in project structure/configuration</li>
+      <li>ease of integration to existing apps (micro-frontends friendliness)</li>
+      <li>production case studies</li>
+      <li>team background/level of knowledge</li>
+      <li>SSR support</li>
+      </ul>
+                    </div>
+                </div>
+      </div>
+
+      <br><br>
+      <img src="https://content.altexsoft.com/media/2018/05/PWAs_web_native_apps_compared.png.webp" width="600">
+    `,
+    category: 'web-application-design'
+  },
+  {
+    question: 'CSS methodologies',
+    answer: `
+    <div class="markdown-body">
+                <h1><a id="user-content-css-methodologies" class="anchor" aria-hidden="true" href="#css-methodologies"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>CSS methodologies</h1>
+    <p>The most popular ones</p>
+    <ul>
+    <li>
+    <strong>Atomic CSS</strong> - One Rule for One Styling</li>
+    <li>
+    <strong>BEM</strong> - component-based approach, any component level class is a <code>block</code>, any its part is an <code>element</code>, the state of both block or element could be described with <code>modifier</code>
+    </li>
+    <li>
+    <strong>ITCSS</strong> - Inverted Triangle CSS divides CSS structure into sections going up-down from more general to more specific</li>
+    <li>
+    <strong>SMACSS</strong> - separate our classes into groups <code>Base rules</code>, <code>Layout rules</code>, <code>Modules</code>, <code>State rules</code>, <code>Theme rules</code>, name and structure them accordingly</li>
+    <li>
+    <strong>OOCSS</strong> - introduces wide code reuse with extracting repeating CSS patterns as default classes</li>
+    </ul>
+    <p>They can be used in combination together as well as independently. Take the best of each approach.</p>
+    <h2><a id="user-content-links" class="anchor" aria-hidden="true" href="#links"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a><em>Links</em></h2>
+    <ul>
+    <li><a href="https://www.valoremreply.com/post/5_css_methodologies/" rel="nofollow">5 Methodologies for Architecting CSS</a></li>
+    <li><a href="https://2020.stateofcss.com/en-US/technologies/methodologies/" rel="nofollow">CSS Methodologies (stateofcss)</a></li>
+    </ul>
+
+              </div>
+
+    `,
+    category: 'web-application-design'
+  },
+  {
+    question: 'CSS methodology - BEM',
+    answer: `
+
+    `,
+    category: 'web-application-design'
+  },
+  {
+    question: 'Як приживється з Ангуляр? Чи доречно його юзати?',
+    answer: `Якщо ми юзаємо view encapsulation - то ні. Якщо ні - то можна. БЕМ не варто юзати з ангуляром, бо то пережиток минулого)))))`,
+    category: 'web-application-design'
+  },
+  {
+    question: 'CSS modules',
+    answer: ``,
+    category: 'web-application-design'
+  },
+  {
+    question: 'CSS in JS',
+    answer: ``,
+    category: 'web-application-design'
+  },
+  {
+    question: 'OOCSS',
+    answer: ``,
+    category: 'web-application-design'
+  },
+  {
+    question: 'Atomic css',
+    answer: ``,
+    category: 'web-application-design'
+  },
+  //-------------------------------------------------------------------------------------------
+  {
+    question: 'Що таке Dependency injection? (injection tree, providedIn vs providers list)',
+    answer: ``,
+    category: 'angular-deep-dive'
+  },
+  {
+    question: 'Що таке Inversion of control?',
+    answer: ``,
+    category: 'angular-deep-dive'
+  },
+  {
+    question: 'Що таке lightweight mechanism?',
+    answer: ``,
+    category: 'angular-deep-dive'
+  },
+  {
+    question: 'Що таке Change Detection? (change detector/ change detector tree)',
+    answer: `The main job of the change detection mechanism is to detect the state changes and reflect the change in the User Interface.
+    <br> There are two main building blocks of change detection in Angular:
+<br>
+ - a component view<br>
+- the associated bindings<br>
+`,
+    category: 'angular-deep-dive'
+  },
+  {
+    question: 'Що таке tree-shaking? Чи завжди працює? коли зявилось?',
+    answer: `8 версія`,
+    category: 'angular-deep-dive'
+  },
+  {
+    question: 'Change detciion strategues.',
+    answer: ``,
+    category: 'angular-deep-dive'
+  },
+  {
+    question: 'NgZone/ run out zone, attach/detach?\n',
+    answer: ``,
+    category: 'angular-deep-dive'
+  },
+  {
+    question: 'How to run change detection?',
+    answer: ``,
+    category: 'angular-deep-dive'
+  },
+  {
+    question: 'Change detection ref/ 3 methods',
+    answer: ``,
+    category: 'angular-deep-dive'
+  },
+  {
+    question: 'Monkey patching',
+    answer: ``,
+    category: 'angular-deep-dive'
+  },
+  {
+    question: 'Чи можемо ми повністю викинути zone.js з бандлу і працювати без неї',
+    answer: ``,
+    category: 'angular-deep-dive'
+  },
+  {
+    question: 'RxJS - Pros & Cons',
+    answer: ``,
+    category: 'angular-deep-dive'
+  },
+  {
+    question: 'NgRx - Pros & Cons',
+    answer: ``,
+    category: 'angular-deep-dive'
+  },
+  {
+    question: 'Component store',
+    answer: ``,
+    category: 'angular-deep-dive'
+  },
+  {
+    question: 'Security in Angular',
+    answer: ``,
+    category: 'angular-deep-dive'
+  },
+  {
+    question: 'Performance in Angular',
+    answer: ``,
+    category: 'angular-deep-dive'
+  },
+  {
+    question: 'Міграція з 1 до 2 ангуляру + обгрунтування чому. Як переконати замовника \n',
+    answer: ``,
+    category: 'angular-deep-dive'
+  },
+  {
+    question: 'Нові фічі в ангулярі',
+    answer: ``,
+    category: 'angular-deep-dive'
+  },
+  //--------------------------------------------------------------------
+  {
+    question: 'Що таке архутектура веб застосунку?',
+    answer: ``,
+    category: 'architecture '
+  },
+  {
+    question: 'Що таке погана архітектура?',
+    answer: ``,
+    category: 'architecture '
+  },
+  {
+    question: 'Хто взагалі відповідальний а архітектура на проекті?',
+    answer: ``,
+    category: 'architecture '
+  },
+  {
+    question: 'Які можуть бути рамки, які нам можуть не дозволяти арітектуру так як ми хочемо',
+    answer: ``,
+    category: 'architecture '
+  },
+  {
+    question: 'За  якими факторами будується архітектура',
+    answer: ``,
+    category: 'architecture '
+  },
+  {
+    question: 'Functional & Non-functional requirenments',
+    answer: ``,
+    category: 'architecture '
+  },
+  {
+    question: 'Приклад рекваєрменту який одночасно є і  фанкшинал і нон фанкшинал',
+    answer: ``,
+    category: 'architecture '
+  },
+  {
+    question: 'Види тeстування нон фанкшинал рекваєрментс',
+    answer: ``,
+    category: 'architecture '
+  },
+  {
+    question: 'Які є рівні аксесебіліті і як вони визначаються',
+    answer: ``,
+    category: 'architecture '
+  },
+  {
+    question: 'Як вибрати нфр, якщо вони не є визначені на проекті?',
+    answer: ``,
+    category: 'architecture '
+  },
+  {
+    question: 'Які є архітектурні патерни?',
+    answer: ``,
+    category: 'architecture '
+  },
+  {
+    question: 'що таке Layer architechture? Pros & Cons',
+    answer: ``,
+    category: 'architecture '
+  },
+  {
+    question: 'Що таке Cloud based architecture?',
+    answer: ``,
+    category: 'architecture '
+  },
+  {
+    question: 'Що таке Event driven architecture?',
+    answer: ``,
+    category: 'architecture '
+  },
+  {
+    question: 'Мінуси ІвентЕмітера?',
+    answer: ``,
+    category: 'architecture '
+  },
+  {
+    question: 'Принцими які дозволяють краще розробляти (дизайн принципи)',
+    answer: ``,
+    category: 'architecture '
+  },
+  {
+    question: 'Cтейкхолдер це - ... Їх типи',
+    answer: ``,
+    category: 'architecture '
+  },
+  {
+    question: 'Як працювати зі стейкходерами',
+    answer: ``,
+    category: 'architecture '
+  },
+  {
+    question: 'чи є девелопер тейкходером продукту? чому?',
+    answer: ``,
+    category: 'architecture '
+  },
+  {
+    question: 'Ситуація: є 2 секхолдера. - один каже одне, інший інше. Що робити в цій ситуації?',
+    answer: ``,
+    category: 'architecture '
+  },
+  //-----------------------------------------------------
+  {
+    question: 'Що таке патерни? Які вони бувають?',
+    answer: `
+    Design patterns are advanced object-oriented solutions to commonly occurring software problems.  Patterns are about reusable designs and interactions of objects.  Each pattern has a name and becomes part of a vocabulary when discussing complex design solutions.
+    They are categorized in three groups: Creational, Structural, and Behavioral.
+    <ul>
+<li>
+<p><strong>Creational patterns</strong> provide object creation mechanisms that increase flexibility and reuse of existing code.</p>
+</li>
+<li>
+<p><strong>Structural patterns</strong> explain how to assemble objects and classes into larger structures, while keeping these structures flexible and efficient.</p>
+</li>
+<li>
+<p><strong>Behavioral patterns</strong> take care of effective communication and the assignment of responsibilities between objects.</p>
+</li>
+</ul>
+
+<table class="table table-md bg-cream-100">
+    <tbody><tr>
+      <td class="border-0 p-10 font-weight-bold" colspan="2">Creational Patterns</td>
+    </tr>
+    <tr>
+      <td style="width:25%;">&nbsp;&nbsp;<a class="nobr" href="/javascript/abstract-factory-design-pattern">Abstract Factory</a></td>
+      <td style="width:75%;">Creates an instance of several families of classes</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;<a class="nobr" href="/javascript/builder-design-pattern">Builder</a></td>
+      <td>Separates object construction from its representation</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;<a class="nobr" href="/javascript/factory-method-design-pattern">Factory Method</a></td>
+      <td>Creates an instance of several derived classes</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;<a class="nobr" href="/javascript/prototype-design-pattern">Prototype</a></td>
+      <td>A fully initialized instance to be copied or cloned</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;<a class="nobr" href="/javascript/singleton-design-pattern">Singleton</a></td>
+      <td>A class of which only a single instance can exist</td>
+    </tr>
+  </tbody></table>
+
+  <table class="table table-md bg-cream-100">
+    <tbody><tr>
+      <td class="border-0 p-10 font-weight-bold" colspan="2">Structural Patterns</td>
+    </tr>
+    <tr>
+      <td style="width:25%;">&nbsp;&nbsp;<a class="nobr" href="/javascript/adapter-design-pattern">Adapter</a></td>
+      <td style="width:75%;">Match interfaces of different classes</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;<a class="nobr" href="/javascript/bridge-design-pattern">Bridge</a></td>
+      <td>Separates an object’s interface from its implementation</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;<a class="nobr" href="/javascript/composite-design-pattern">Composite</a></td>
+      <td>A tree structure of simple and composite objects</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;<a class="nobr" href="/javascript/decorator-design-pattern">Decorator</a></td>
+      <td>Add responsibilities to objects dynamically</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;<a class="nobr" href="/javascript/facade-design-pattern">Facade</a></td>
+      <td>A single class that represents an entire subsystem</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;<a class="nobr" href="/javascript/flyweight-design-pattern">Flyweight</a></td>
+      <td>A fine-grained instance used for efficient sharing</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;<a class="nobr" href="/javascript/proxy-design-pattern">Proxy</a></td>
+      <td>An object representing another object</td>
+    </tr>
+  </tbody></table>
+
+  <table class="table table-md bg-cream-100">
+    <tbody><tr>
+      <td class="border-0 p-10 font-weight-bold" colspan="2">Behavioral Patterns</td>
+    </tr>
+    <tr>
+      <td style="width:25%;">&nbsp;&nbsp;<a class="nobr" href="/javascript/chain-of-responsibility-design-pattern">Chain of Resp.</a></td>
+      <td style="width:75%;">A way of passing a request between a chain of objects</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;<a class="nobr" href="/javascript/command-design-pattern">Command</a></td>
+      <td>Encapsulate a command request as an object</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;<a class="nobr" href="/javascript/interpreter-design-pattern">Interpreter</a></td>
+      <td>A way to include language elements in a program</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;<a class="nobr" href="/javascript/iterator-design-pattern">Iterator</a></td>
+      <td>Sequentially access the elements of a collection</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;<a class="nobr" href="/javascript/mediator-design-pattern">Mediator</a></td>
+      <td>Defines simplified communication between classes</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;<a class="nobr" href="/javascript/memento-design-pattern">Memento</a></td>
+      <td>Capture and restore an object's internal state</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;<a class="nobr" href="/javascript/observer-design-pattern">Observer</a></td>
+      <td>A way of notifying change to a number of classes</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;<a class="nobr" href="/javascript/state-design-pattern">State</a></td>
+      <td>Alter an object's behavior when its state changes</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;<a class="nobr" href="/javascript/strategy-design-pattern">Strategy</a></td>
+      <td>Encapsulates an algorithm inside a class</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;<a class="nobr" href="/javascript/template-method-design-pattern">Template Method</a></td>
+      <td>Defer the exact steps of an algorithm to a subclass</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;<a class="nobr" href="/javascript/visitor-design-pattern">Visitor</a></td>
+      <td>Defines a new operation to a class without change</td>
+    </tr>
+  </tbody></table>
+    `,
+    category: 'patterns '
+  },
+  {
+    question: 'Що таке Singleton? Яку проблему вирішує?',
+    answer: `Singleton is a creational design pattern that lets you ensure that a class has only one instance, while providing a global access point to this instance.
+
+The Singleton class declares the static method getInstance that returns the same instance of its own class.
+
+The Singleton’s constructor should be hidden from the client code. Calling the getInstance method should be the only way of getting the Singleton object.
+<br>
+<div class="section pros-cons">
+<h2 id="pros-cons"><i class="fa fa-balance-scale" aria-hidden="true"></i> Pros and Cons</h2>
+<div class="row"><div class="col-sm-6">
+<ul>
+<li>
+<i class="fa fa-fw fa-check" aria-hidden="true"></i> You can be sure that a class has only a single instance.</li>
+<li>
+<i class="fa fa-fw fa-check" aria-hidden="true"></i> You gain a global access point to that instance.</li>
+<li>
+<i class="fa fa-fw fa-check" aria-hidden="true"></i> The singleton object is initialized only when it’s requested for the first time.</li>
+</ul>
+</div><div class="col-sm-6">
+<ul>
+<li>
+<i class="fa fa-fw fa-times" aria-hidden="true"></i> Violates the <em>Single Responsibility Principle</em>. The pattern solves two problems at the time.</li>
+<li>
+<i class="fa fa-fw fa-times" aria-hidden="true"></i> The Singleton pattern can mask bad design, for instance, when the components of the program know too much about each other.</li>
+<li>
+<i class="fa fa-fw fa-times" aria-hidden="true"></i> The pattern requires special treatment in a multithreaded environment so that multiple threads won’t create a singleton object several times.</li>
+<li>
+<i class="fa fa-fw fa-times" aria-hidden="true"></i> It may be difficult to unit test the client code of the Singleton because many test frameworks rely on inheritance when producing mock objects. Since the constructor of the singleton class is private and overriding static methods is impossible in most languages, you will need to think of a creative way to mock the singleton. Or just don’t write the tests. Or don’t use the Singleton pattern.</li>
+</ul>
+</div></div></div>
+`,
+    category: 'patterns '
+  },
+  {
+    question: 'Що таке Builder? Яку проблему вирішує?\n',
+    answer: ``,
+    category: 'patterns '
+  },
+  {
+    question: 'Що таке Proxy? Яку проблему вирішує?',
+    answer: ``,
+    category: 'patterns '
+  },
+  {
+    question: 'Що таке Mediator? Яку проблему вирішує?',
+    answer: ``,
+    category: 'patterns '
+  },
+  {
+    question: 'Що таке Facad? Яку проблему вирішує?\n',
+    answer: ``,
+    category: 'patterns '
+  },
+  {
+    question: 'Що таке Decorator? Яку проблему вирішує?\n',
+    answer: ``,
+    category: 'patterns '
+  },
+  {
+    question: 'Що таке Fabric method? Яку проблему вирішує?\n',
+    answer: ``,
+    category: 'patterns '
+  },
+  {
+    question: 'Що таке Flyweight? Яку проблему вирішує?',
+    answer: ``,
+    category: 'patterns '
+  },
+  {
+    question: 'Що таке Observer? Яку проблему вирішує?',
+    answer: ``,
+    category: 'patterns '
+  },
+  {
+    question: 'Що таке State? Яку проблему вирішує?',
+    answer: ``,
+    category: 'patterns '
+  },
+  {
+    question: 'Що таке Adapter? Яку проблему вирішує?',
+    answer: ``,
+    category: 'patterns '
+  },
+  {
+    question: 'Що таке Chain of resposibility? Яку проблему вирішує?',
+    answer: ``,
+    category: 'patterns '
+  },
+  {
+    question: 'Що таке Iterator? Яку проблему вирішує?\n',
+    answer: ``,
+    category: 'patterns '
+  },
+  {
+    question: 'Що таке Prototype? Яку проблему вирішує?',
+    answer: ``,
+    category: 'patterns '
+  },
+  {
+    question: 'Що таке Bridge? Яку проблему вирішує?\n',
+    answer: ``,
+    category: 'patterns '
+  },
+  {
+    question: 'Що таке Event Path?',
+    answer: ``,
+    category: 'patterns '
+  },
+  {
+    question: 'Які дизайн патерни використовує фреймворк під капотом?',
+    answer: ``,
+    category: 'patterns '
+  },
+  {
+    question: 'Що таке МVM patterns?',
+    answer: ``,
+    category: 'patterns '
+  },
+  {
+    question: 'Який антепатерн може помогти вирішити пролему з розділенням?',
+    answer: ``,
+    category: 'patterns '
+  },
+  {
+    question: 'MVC, MVVM, MVP\n',
+    answer: ``,
+    category: 'patterns '
+  },
+  {
+    question: 'Що таке Flux?',
+    answer: ``,
+    category: 'patterns '
+  },
+  {
+    question: 'Side management approach\n',
+    answer: ``,
+    category: 'patterns '
+  },
+  {
+    question: 'Що таке Redux?',
+    answer: ``,
+    category: 'patterns '
+  },
+  {
+    question: 'Як варто створювати і зберігати стор? що таке нормалайзер?',
+    answer: ``,
+    category: 'patterns '
+  },
+  {
+    question: 'Чим асинк пайп краще нiж сабскрайб?',
+    answer: ``,
+    category: 'patterns '
+  },
+  //---------------------------------------------------------
+  {
+    question: 'Коли ти ревюваєш код, що ти дивишся?',
+    answer: `
+    (DRY, KISS, YAGNI, SOLID), should be documented & tested
+    `,
+    category: 'code-quality'
+  },
+  {
+    question: 'В яких метриках ми можемо поміряти якість коду?',
+    answer: `
+Код ковередж, сладність коду (щми в сонарі), + кількість залежностей
+Багато чого можна глянуть в SonarQube.
+    <ul>
+<li>
+<strong>Reliability</strong>. It relates to the number of defects and availability of the software. The number of defects can be measured by running a static analysis tool. Software availability can be measured using the mean time between failures (MTBF).</li>
+<li>
+<strong>Maintainability</strong>. You can’t use a single metric to ensure maintainability. Some metrics you may consider to improve maintainability are the number of stylistic warnings and Halstead complexity measures.</li>
+<li>
+<strong>Testability</strong>. Testability can be measured based on how many test cases you need to find potential faults in the system. The size and complexity of the software can impact testability.</li>
+<li>
+<strong>Portability</strong>. Portability measures how usable the same software is in different environments. It relates to platform independence. There isn’t a specific measure of portability.</li>
+<li>
+<strong>Reusability</strong>. Reusability can be measured by the number of interdependencies. Running a static analyzer can help you identify these interdependencies.</li>
+</ul>
+`,
+    category: 'code-quality'
+  },
+  {
+    question: 'Які є типи тестування? + різниця і приклади',
+    answer: `
+<img alt="" class="ce md me c" width="600"  src="https://miro.medium.com/max/875/1*xFo_YdGdVuueZBC0LEUXGg.jpeg">
+<br>
+<img width="600" src="https://static.javatpoint.com/tutorial/software-testing/images/types-of-software-testing.png" alt="Types of Software Testing">
+    `,
+    category: 'code-quality'
+  },
+  {
+    question: 'Як потрібно тестувати компоненти? чи треба тестувати вюшку? Чи тільки тестувати паблік методи чи прайват теж?      ',
+    answer: ``,
+    category: 'code-quality'
+  },
+  {
+    question: 'ЯК тестувати вюшку?',
+    answer: `
+    Черз підхід з гетерами, або тестуємо публічні методи з класу які шось генерують на вюшку`,
+    category: 'code-quality'
+  },
+  {
+    question: 'Які речі є додатові в тестінг піраміді? або які ще є піраміди?',
+    answer: `
+Ісе-cream + мануальні тести - Амвей к приклад <br>
+    <img alt="" class="ce md me c" width="600" src="https://miro.medium.com/max/875/1*x4mUTSh7ZkYrNZFHO7W9Hw.jpeg">
+    `,
+    category: 'code-quality'
+  },
+  {
+    question: 'TDD && BDD ',
+    answer: `
+    TDD (Test Driven Development) — Разработка на основе тестов.
+<br>
+BDD (Behavior Driven Development) — Разработка на основе поведения.
+<br>
+BDD, на самом деле, является расширением TDD-подхода. Тем не менее, они предназначены для разных целей и для их реализации используются разные инструменты. В разных командах эти понятия могут интерпретировать по-разному, и часто возникает путаница между ними.`,
+    category: 'code-quality'
+  },
+  {
+    question: 'Що саме тестує TDD а що BTD',
+    answer: `
+    <ul class=""><li id="720e" class="lb lc ig jf b jg kw jk kx jo ld js le jw lf ka lg lh li lj gh" data-selectable-paragraph="">TDD хорошо подходит для юнит-тестирования, т.е. для проверки работы отдельных модулей самих по себе. BDD — для интеграционного (т.е. для проверки, как отдельные модули работают друг с другом) и e2e (т.е. для проверки всей системы целиком) тестирования.</li><li id="253c" class="lb lc ig jf b jg lk jk ll jo lm js ln jw lo ka lg lh li lj gh" data-selectable-paragraph="">TDD: тесты сразу реализуются в коде, для BDD чаще всего описываются шаги на языке, понятном всем, а не только разработчикам.</li><li id="2982" class="lb lc ig jf b jg lk jk ll jo lm js ln jw lo ka lg lh li lj gh" data-selectable-paragraph="">TDD: юнит-тесты пишут сами разработчики. BDD требует объедения усилий разных членов команды. Обычно тест-кейсы (шаги) описываются ручным тестировщиком или аналитиком и воплощаются в код тестировщиком-автоматизатором. В нашей команде мы (фронтенедеры) описываем шаги вместе с тестировщиками, а код тестов пишет фронтенд-команда.</li><li id="f8a8" class="lb lc ig jf b jg lk jk ll jo lm js ln jw lo ka lg lh li lj gh" data-selectable-paragraph="">TDD проверяет работу функций, BDD — пользовательские сценарии.</li></ul>
+    `,
+    category: 'code-quality'
+  },
+  {
+    question: 'Given-When-Then',
+    answer: `
+
+    The essential idea is to break down writing a scenario (or test) into three sections:
+    <ul>
+<li>The <b>given</b> part describes the state of the world before
+    you begin the behavior you're specifying in this scenario. You can
+    think of it as the pre-conditions to the test.</li>
+
+<li>The <b>when</b> section is that behavior that you're
+    specifying.</li>
+
+<li>Finally the <b>then</b> section describes the changes you
+    expect due to the specified behavior. </li>
+</ul>
+    `,
+    category: 'code-quality'
+  },
+  {
+    question: 'Whats FIRST principle?',
+    answer: `
+    <div class="markdown-body">
+                <h1><a id="user-content-first-principles-of-testing" class="anchor" aria-hidden="true" href="#first-principles-of-testing"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>F.I.R.S.T principles of testing</h1>
+      <ol>
+      <li>Fast</li>
+      <li>Isolated/Independent</li>
+      <li>Repeatable</li>
+      <li>Self-validating</li>
+      <li>thorough</li>
+      </ol>
+      <h2><a id="user-content-fast" class="anchor" aria-hidden="true" href="#fast"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Fast</h2>
+      <p>The developer shouldn’t hesitate to run the unit tests. Tests should run in a matter of seconds.</p>
+      <h2><a id="user-content-isolatedindependent" class="anchor" aria-hidden="true" href="#isolatedindependent"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Isolated/Independent</h2>
+      <ul>
+      <li>For any given unit test, for its environment variables or for its setup.</li>
+      <li>SHould be divided into three parts according to AAA pattern:
+      <ul>
+      <li>
+      <strong>Arrange</strong>. All the data should be provided to the test when you’re about to run the test and it should not depend on the environment you are running the tests.</li>
+      <li>
+      <strong>Act</strong>. Invoke the actual method under test.</li>
+      <li>
+      <strong>Assert</strong>. At any given point, a unit test should only assert one logical outcome, multiple physical assertions can be part of this physical assertion, as long as they all act on the state of the same object.</li>
+      </ul>
+      </li>
+      </ul>
+      <h2><a id="user-content-repeatable" class="anchor" aria-hidden="true" href="#repeatable"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Repeatable</h2>
+      <ul>
+      <li>tests should be repeatable and deterministic, their values shouldn’t change based on being run in different environments.</li>
+      <li>Each test should set up its own data and should not depend on any external factors to run its test</li>
+      </ul>
+      <h2><a id="user-content-self-validating" class="anchor" aria-hidden="true" href="#self-validating"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Self-validating</h2>
+      <p>You shouldn’t need to check manually, whether the test passed or not.</p>
+      <h2><a id="user-content-thorough" class="anchor" aria-hidden="true" href="#thorough"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Thorough</h2>
+      <ul>
+      <li>Should cover all the happy paths</li>
+      <li>Try covering all the edge cases, where the author would feel the function would fail.</li>
+      <li>Test for illegal arguments and variables.</li>
+      <li>Test for security and other issues</li>
+      <li>Test for large values, what would a large input do their program.</li>
+      <li>Should try to cover every use case scenario and not just aim for 100% code coverage.</li>
+      </ul>
+      <h2><a id="user-content-links" class="anchor" aria-hidden="true" href="#links"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a><em>Links</em></h2>
+      <ul>
+      <li><a href="https://medium.com/@tasdikrahman/f-i-r-s-t-principles-of-testing-1a497acda8d6" rel="nofollow">F.I.R.S.T principles of testing</a></li>
+      </ul>
+
+              </div>
+    `,
+    category: 'code-quality'
+  },
+  {
+    question: 'Unit testing AAA patern',
+    answer: `
+    he AAA (Arrange-Act-Assert) pattern has become almost a standard across the industry. It suggests that you should divide your test method into three sections: arrange, act and assert. Each one of them only responsible for the part in which they are named after.
+
+So the arrange section you only have code required to setup that specific test. Here objects would be created, mocks setup (if you are using one) and potentially expectations would be set. Then there is the Act, which should be the invocation of the method being tested. And on Assert you would simply check whether the expectations were met.`,
+    category: 'code-quality'
+  },
+  {
+    question: 'Які існують Quality Gates?',
+    answer: `
+    <div class="markdown-body">
+
+    <h2><a id="user-content-code-quality-gates" class="anchor" aria-hidden="true" href="#code-quality-gates"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Code quality gates</h2>
+    <img src="code-quality/images/quality-gates.png" width="600px">
+    <p>An example is demonstrated in the picture. We can assure performance, linters, validations of tools like Sonar Cube and other things here.</p>
+    <h2><a id="user-content-the-way-to-improve-code-quality" class="anchor" aria-hidden="true" href="#the-way-to-improve-code-quality"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>The way to improve code quality</h2>
+    <ol>
+    <li>Use a coding standard.</li>
+    <li>Analyze code — before code reviews (linters).</li>
+    <li>Follow code review best practices.</li>
+    <li>Refactor legacy code (when necessary).</li>
+    </ol>
+    <h2><a id="user-content-links" class="anchor" aria-hidden="true" href="#links"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a><em>Links</em></h2>
+    <ul>
+    <li><a href="https://www.perforce.com/blog/sca/what-code-quality-and-how-improve-code-quality" rel="nofollow">What Is Code Quality? And How to Improve Code Quality</a></li>
+    </ul>
+
+              </div>
+    `,
+    category: 'code-quality'
+  },
+  {
+    question: 'Lint VS Prettier - Що за що відповідає',
+    answer: `
+    <ul class=""><li id="8c52" class="od oe jh lk b ll lm lo lp lr of lv og lz oh md oi oj ok ol gg" data-selectable-paragraph="">ESlint is not only a code formatter, it also helps developers to find coding errors. For Example, ESLint will give you a warning if you use a variable without declaring it. Prettier doesn't have such an ability.</li><li id="3384" class="od oe jh lk b ll om lo on lr oo lv op lz oq md oi oj ok ol gg" data-selectable-paragraph="">Also, ESLint will let you know what’s wrong with your code formatting and give you options to fix the issue. Then you can select one from those options. Prettier, on the other hand, doesn't care about you at all. It simply formats all your code to a different structure format-wise.</li><li id="a895" class="od oe jh lk b ll om lo on lr oo lv op lz oq md oi oj ok ol gg" data-selectable-paragraph="">On the other hand, this whole rewriting process in Prettier prevents the developer from making any mistakes.</li><li id="d20c" class="od oe jh lk b ll om lo on lr oo lv op lz oq md oi oj ok ol gg" data-selectable-paragraph=""><a class="au nj" href="https://eslint.org/docs/rules/max-len" rel="noopener ugc nofollow" target="_blank">max-len</a>, <a class="au nj" href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs" rel="noopener ugc nofollow" target="_blank">no-mixed-spaces-and-tabs</a>, <a class="au nj" href="https://eslint.org/docs/rules/keyword-spacing" rel="noopener ugc nofollow" target="_blank">keyword-spacing</a>, <a class="au nj" href="https://eslint.org/docs/rules/comma-style" rel="noopener ugc nofollow" target="_blank">comma-style</a> are some popular formatting rules in Prettier.</li><li id="c6d7" class="od oe jh lk b ll om lo on lr oo lv op lz oq md oi oj ok ol gg" data-selectable-paragraph="">In addition to the above type of rules, ESLint also considers code quality rules such as <a class="au nj" href="https://eslint.org/docs/rules/no-unused-vars" rel="noopener ugc nofollow" target="_blank">no-unused-vars</a>, <a class="au nj" href="https://eslint.org/docs/rules/no-extra-bind" rel="noopener ugc nofollow" target="_blank">no-extra-bind</a>, <a class="au nj" href="https://eslint.org/docs/rules/no-implicit-globals" rel="noopener ugc nofollow" target="_blank">no-implicit-globals</a>, <a class="au nj" href="https://eslint.org/docs/rules/prefer-promise-reject-errors" rel="noopener ugc nofollow" target="_blank">prefer-promise-reject-errors</a>.</li></ul>
+    `,
+    category: 'code-quality'
+  },
+  {
+    question: 'Які є Готові кнфігурації прітієра',
+    answer: `A Prettier configuration based off the Airbnb JavaScript style guide, google conf`,
+    category: 'code-quality'
+  },
+  {
+    question: 'Які є аналоги сонар кюбу?',
+    answer: `<div class="di3YZe"><div class="co8aDb" aria-level="3" role="heading"><b>Top 10 Alternatives to SonarQube</b></div><div class="RqBzHd"><ul class="i8Z77e"><li class="TrT0Xe">Embold.</li><li class="TrT0Xe">GitHub.</li><li class="TrT0Xe">GitLab.</li><li class="TrT0Xe">Coverity.</li><li class="TrT0Xe">Checkmarx.</li><li class="TrT0Xe">Klocwork.</li><li class="TrT0Xe">Veracode Application Security Platform.</li><li class="TrT0Xe">DeepSource.</li></ul><div class="u9iNfb"></div></div></div>`,
+    category: 'code-quality'
+  },
+  {
+    question: 'Які ми метрики можемо витягнути з сонару? ',
+    answer: ``,
+    category: 'code-quality'
+  },
+  {
+    question: 'Що таке код смел? ПРиклади',
+    answer: `
+Code smells are not bugs or errors. Instead, these are absolute violations of the fundamentals of developing software that decrease the quality of code.
+    <ul class="default-list">
+ <li>duplicate code</li>
+ <li>dead code</li>
+ <li>long methods</li>
+ <li>long parameter list</li>
+ <li>comments</li>
+ <li>unnecessary primitive variables</li>
+ <li>data clumps</li>
+</ul>`,
+    category: 'code-quality'
+  },
+  {
+    question: 'What\'s Code Review checklist?',
+    answer: `
+
+    Code review checklist. A checklist helps you to create a structured approach to code reviews. Also, they remind you of all the quality checks you need to perform to approve code into the codebase. You can include many specific items into your code review checklist.
+
+<br>
+
+<div id="code_block-139-10331" class="ct-code-block width--full blog-postcontent">
+
+<h2 id="things-to-add">What to Add to Your Code Review Checklist</h2>
+<p>Let's start with some of the items I think are indispensable in a code review checklist.</p>
+
+<h5>1. Identify Obvious Bugs</h5>
+<h5>2. Look for Possible Security Issues</h5>
+<h5>3. Look for "Clever" Code</h5>
+<h5>4. Check for Code Duplication</h5>
+<h5>5. Check Whether Names Are Descriptive Enough</h5>
+<h5>6. Look for Possible Performance Improvements</h5>
+<h5>7. Check the Presence and Quality of Tests</h5>
+<h5>8. Explain Your Changes</h5>
+<h5>9. Optional: Code Documentation</h5>
+
+<h2 id="things-to-remove">What to Remove from Your Code Review Checklist</h2>
+
+<h5>1. Cosmetic Concerns</h5>
+<h5>2. Testing</h5>
+</div>
+    `,
+    category: 'code-quality'
+  },
+  {
+    question: 'Whats code quality ladder?',
+    answer: `
+    <div class="markdown-body">
+                <h1><a id="user-content-code-quality-ladder" class="anchor" aria-hidden="true" href="#code-quality-ladder"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Code Quality Ladder</h1>
+<p>Let's climb to these steps from level one to four.</p>
+<ol>
+<li>Correctness</li>
+<li>Efficiency</li>
+<li>Readability</li>
+<li>Extensibility</li>
+</ol>
+<h2><a id="user-content-correctness" class="anchor" aria-hidden="true" href="#correctness"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Correctness</h2>
+<p>Code should be testable. You should understand the way you will test it and all the edge cases. Validate the input. Handle the exceptions.</p>
+<h2><a id="user-content-efficiency" class="anchor" aria-hidden="true" href="#efficiency"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Efficiency</h2>
+<p>Consider time efficiency, space efficiency, user interaction efficiency, etc.
+Time efficiency is <code>O(n)</code> (Big-O notation) with taking into account size <code>n</code> and constant <code>k</code>.</p>
+<p>The goal when writing any code is to be as efficient as possible under the given constraints.</p>
+<p>Overdoing is bad too. This is known as "premature optimization" and should be avoided. Only optimize what you need to optimize.</p>
+<h2><a id="user-content-readability" class="anchor" aria-hidden="true" href="#readability"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Readability</h2>
+<p>The code you write is not yours. It belongs to your team (or even other teams).</p>
+<p>A common industry practice used to get teams on the same page is called a coding style guide.</p>
+<p>The most important thing is for your team’s code to be consistent. Your teammates will be the judge of your code’s readability</p>
+<h2><a id="user-content-extensibility" class="anchor" aria-hidden="true" href="#extensibility"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Extensibility</h2>
+<p>If you make your code too specific, the use case will be limited and every time the requirement changes, the code will need to be modified. If you make your code too generic, your clients need to do a lot to build on top of your code for their specific needs, and then it’s too difficult to use.</p>
+<h2><a id="user-content-links" class="anchor" aria-hidden="true" href="#links"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a><em>Links</em></h2>
+<ul>
+<li><a href="https://medium.com/leap-ai/climbing-the-code-quality-ladder-babd3198e6e2" rel="nofollow">Climbing The Code Quality Ladder</a></li>
+</ul>
+
+              </div>
+    `,
+    category: 'code-quality'
+  },
+  {
+    question: 'Whats tech debt?',
+    answer: `
+    “Technical debt is the cost of technical decisions that are made for the immediacy, simplicity, or [budget] that, while easy today, will slow you down or increase your operational costs/risks [over time]. Most often it’s related to technical products, but can be found in most business processes and use cases. Many times this technical debt can turn into ‘human spackle,’ where knowledge workers do repetitive tasks that could be automated.” –Justin Brodley, VP
+A good example of this is Uncle Bob's post saying a mess is not a debt. His argument is that messy code, produced by people who are ignorant of good design practices, shouldn't be a debt. Technical Debt should be reserved for cases when people have made a considered decision to adopt a design strategy that isn't sustainable in the longer term, but yields a short term benefit, such as making a release. The point is that the debt yields value sooner, but needs to be paid off as soon as possible.
+<br><br>
+Deliberate and reckless<br>
+Deliberate and reckless technical debt happens when the team knows that a particular decision will result in tech debt but still moves forward because it prioritizes speed over quality.
+<br>
+Deliberate and prudent<br>
+Like the previous type, the deliberate and prudent technical debt happens when the team knows that a decision will cause tech debt but moves forward anyway. But unlike reckless debt, in this case, the decision is made after analyzing all the consequences.
+<br>
+Inadvertent and reckless<br>
+Inadvertent and reckless technical debt is the most harmful type of debt. It happens when the team doesn’t have enough experience and blindly implements a solution without realizing they’re getting into debt.
+<br>
+Inadvertent and prudent<br>
+Inadvertent and prudent technical debt happens when a knowledgeable team applies best practices during the software development but inadvertently generates technical debt due to unseen coding mistakes. However, the team can identify and pay the technical debt later on due to their skills.
+    `,
+    category: 'code-quality'
+  },
+  {
+    question: 'Як переконати кастомера що нам потрібні тести чи рефакторинг?',
+    answer: ``,
+    category: 'code-quality'
+  },
+  //--------------------------------------------------------------------------
+  {
+    question: 'Як в мене на проекті налаштований CI/CD?\n',
+    answer: ``,
+    category: 'ci-cd-git'
+  },
+  {
+    question: 'Що таке СІ? Що туди входить?',
+    answer: `
+    <div class="markdown-body">
+                <h1><a id="user-content-cicd-and-cd" class="anchor" aria-hidden="true" href="#cicd-and-cd"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>CI/CD and CD</h1>
+<h2><a id="user-content-continuous-integration-ci" class="anchor" aria-hidden="true" href="#continuous-integration-ci"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Continuous integration (CI)</h2>
+<p>Developers practicing continuous integration merge their changes back to the main branch as often as possible. The developer's changes are validated by creating a build and running automated tests against the build.</p>
+<h3><a id="user-content-what-you-need" class="anchor" aria-hidden="true" href="#what-you-need"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>What you need</h3>
+<ul>
+<li>Your team will need to write automated tests for each new feature, improvement or bug fix.</li>
+<li>You need a continuous integration server that can monitor the main repository and run the tests automatically for every new commits pushed.</li>
+<li>Developers need to merge their changes as often as possible, at least once a day.</li>
+</ul>
+
+<img src="ci-cd-cd-and-git/images/ci-cd.png" width="600px">
+
+              </div>`,
+    category: 'ci-cd-git'
+  },
+  {
+    question: 'Що таке СD CD? Що туди входить?',
+    answer: ``,
+    category: 'ci-cd-git'
+  },
+  {
+    question: 'CI CD CD - Pros and Cons',
+    answer: ``,
+    category: 'ci-cd-git'
+  },
+  {
+    question: 'Як на вашу думку має проходити CI CD CD процес? Чому його нема на ашому проекті?',
+    answer: ``,
+    category: 'ci-cd-git'
+  },
+  {
+    question: 'Що таке pre-hooks? Як налаштувати?',
+    answer: ``,
+    category: 'ci-cd-git'
+  },
+  {
+    question: 'Що таке коміт-стилі? ',
+    answer: ``,
+    category: 'ci-cd-git'
+  },
+  {
+    question: 'Які є branching-strategy? ',
+    answer: ``,
+    category: 'ci-cd-git'
+  },
+  {
+    question: 'git-flow. Proc cons. is good for',
+    answer: ``,
+    category: 'ci-cd-git'
+  },
+  {
+    question: 'feature. Proc cons. is good for',
+    answer: ``,
+    category: 'ci-cd-git'
+  },
+  {
+    question: 'forking. Proc cons. is good for',
+    answer: ``,
+    category: 'ci-cd-git'
+  },
+  {
+    question: 'centralized. Proc cons. is good for',
+    answer: ``,
+    category: 'ci-cd-git'
+  },
+  {
+    question: 'Whats squash. В якій бренчинг стратегії юзається',
+    answer: ``,
+    category: 'ci-cd-git'
+  },
+  {
+    question: 'Forking strategy ',
+    answer: ``,
+    category: 'ci-cd-git'
+  },
+  {
+    question: 'Коли як і де і які варто юзаит бренчінг стратегiї',
+    answer: ``,
+    category: 'ci-cd-git'
+  },
+  {
+    question: 'Як впливає розмір і мечуріті команди на вибір бренчінг стратегії?',
+    answer: ``,
+    category: 'ci-cd-git'
+  },
+  {
+    question: 'Які є деплоімент стратегії?',
+    answer: ``,
+    category: 'ci-cd-git'
+  },
+  {
+    question: 'Які є реліз стратегії?',
+    answer: ``,
+    category: 'ci-cd-git'
+  },
+  {
+    question: 'Що таке SDLC? Які його етапи? ',
+    answer: ``,
+    category: 'sdlc'
+  },
+  {
+    question: 'Моделі SDLC\n',
+    answer: ``,
+    category: 'sdlc'
+  },
+  {
+    question: 'Що таке water-fall? Для яких проектів він буде ок? Pros & Cons. Умови вотрфолу',
+    answer: ``,
+    category: 'sdlc'
+  },
+  {
+    question: 'Що таке kanban? Для яких проектів він буде ок? Pros & Cons.',
+    answer: ``,
+    category: 'sdlc'
+  },
+  {
+    question: 'Що таке definition of ready & defenition of done?',
+    answer: ``,
+    category: 'sdlc'
+  },
+  {
+    question: 'Що таке scrum? Для яких проектів він буде ок? Pros & Cons. Які є артефакти?',
+    answer: ``,
+    category: 'sdlc'
+  },
+  {
+    question: 'Scrum-master це роль чи тайтл?',
+    answer: ``,
+    category: 'sdlc'
+  },
+  {
+    question: 'Чим відрізняється коанда від скрам-команди',
+    answer: ``,
+    category: 'sdlc'
+  },
+  {
+    question: 'Як поняти що тіма була ефективна під час спринта?',
+    answer: ``,
+    category: 'sdlc'
+  },
+  {
+    question: 'What is Burndown Chart in Scrum?',
+    answer: ``,
+    category: 'sdlc'
+  },
+  {
+    question: 'Суть кожної церемонії в SCRUM?',
+    answer: ``,
+    category: 'sdlc'
+  },
+  {
+    question: 'Що таке Agile? Чим відрізняється від скраму і канбану. Що воно таке?',
+    answer: ``,
+    category: 'sdlc'
+  },
+  {
+    question: 'Основні принципи agile-manifest?',
+    answer: ``,
+    category: 'sdlc'
+  },
+  {
+    question: 'Що таке extreme programming?',
+    answer: ``,
+    category: 'sdlc'
+  },
+  {
+    question: 'Що таке АС (аксептенс критерії)?',
+    answer: ``,
+    category: 'sdlc'
+  },
+  {
+    question: 'Яку б методологію ви б вибрали для вашого нового проекту?',
+    answer: ``,
+    category: 'sdlc'
+  },
+  {
+    question: '',
+    answer: ``,
+    category: 'estimations'
   }
 ];
