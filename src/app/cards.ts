@@ -3950,7 +3950,9 @@ Inadvertent and prudent technical debt happens when a knowledgeable team applies
   },
   {
     question: 'Що таке СD CD? Що туди входить?',
-    answer: ``,
+    answer: `
+    <img width="600" src="https://wac-cdn.atlassian.com/dam/jcr:b2a6d1a7-1a60-4c77-aa30-f3eb675d6ad6/ci%20cd%20asset%20updates%20.007.png?cdnVersion=629">
+    `,
     category: 'ci-cd-git'
   },
   {
@@ -3965,7 +3967,8 @@ Inadvertent and prudent technical debt happens when a knowledgeable team applies
   },
   {
     question: 'Що таке pre-hooks? Як налаштувати?',
-    answer: ``,
+    answer: `
+    Git hooks are scripts that run automatically every time a particular event occurs in a Git repository. They let you customize Git’s internal behavior and trigger customizable actions at key points in the development life cycle.`,
     category: 'ci-cd-git'
   },
   {
@@ -3975,37 +3978,75 @@ Inadvertent and prudent technical debt happens when a knowledgeable team applies
   },
   {
     question: 'Які є branching-strategy? ',
-    answer: ``,
+    answer: `
+    Git Flow, feature branching strategy, forking,
+    `,
     category: 'ci-cd-git'
   },
   {
     question: 'git-flow. Proc cons. is good for',
-    answer: ``,
+    answer: `It assigns very specific roles to different branches and defines how and when they should interact. In addition to feature branches, it uses individual branches for preparing, maintaining, and recording releases.
+
+It contains Feature Branch flow.
+
+`,
     category: 'ci-cd-git'
   },
   {
     question: 'feature. Proc cons. is good for',
-    answer: ``,
+    answer: `
+    The core idea behind the Feature Branch Workflow is that all feature development should take place in a dedicated branch instead of the main branch. This encapsulation makes it easy for multiple developers to work on a particular feature without disturbing the main codebase.
+    <br>
+    The Git Feature Branch Workflow is a composable workflow that can be leveraged by other high-level Git workflows.
+    <br>
+    <img src="https://github.com/alexanderteplov/computer-science/wiki/ci-cd-cd-and-git/images/FeatureBranch_flow.svg" width="600px">
+        `,
     category: 'ci-cd-git'
   },
   {
     question: 'forking. Proc cons. is good for',
-    answer: ``,
+    answer: `
+    The Forking Workflow is fundamentally different than other popular Git workflows. Instead of using a single server-side repository to act as the “central” codebase, it gives every developer their own server-side repository. The Forking Workflow is most often seen in public open source projects.
+    <ol>
+    <li>A developer 'forks' an 'official' server-side repository. This creates their own server-side copy.</li>
+    <li>The new server-side copy is cloned to their local system.</li>
+    <li>A Git remote path for the 'official' repository is added to the local clone.</li>
+    <li>A new local feature branch is created.</li>
+    <li>The developer makes changes on the new branch.</li>
+    <li>New commits are created for the changes.</li>
+    <li>The branch gets pushed to the developer's own server-side copy.</li>
+    <li>The developer opens a pull request from the new branch to the 'official' repository.</li>
+    <li>The pull request gets approved for merge and is merged into the original server-side repository</li>
+    </ol>
+    `,
     category: 'ci-cd-git'
   },
   {
     question: 'centralized. Proc cons. is good for',
-    answer: ``,
+    answer: `Однабренча і всі лиють в неї`,
     category: 'ci-cd-git'
   },
   {
     question: 'Whats squash. В якій бренчинг стратегії юзається',
-    answer: ``,
+    answer: `To "squash" in Git means to combine multiple commits into one. You can do this at any point in time (by using Git's "Interactive Rebase" feature), though it is most often done when merging branches. Please note that there is no such thing as a stand-alone git squash command.`,
     category: 'ci-cd-git'
   },
   {
-    question: 'Forking strategy ',
-    answer: ``,
+    question: 'git hub strategy ',
+    answer: `
+    In reaction to Git flow a simpler alternative was detailed, called GitHub flow. This flow has only feature branches and a master branch. Anything in the master branch is deployable, so to work on something new, create a descriptively named branch. When it's ready, you create a merge or pull request. After someone else has reviewed and signed off on the feature, it deployed, got feedback, and merged into master.
+
+It contains Feature Branch flow.
+
+<img src="https://github.com/alexanderteplov/computer-science/wiki/ci-cd-cd-and-git/images/GitHub_flow.svg" width="600px">`,
+    category: 'ci-cd-git'
+  },
+  {
+    question: 'git lab strategy ',
+    answer: `
+    The GitLab flow suggests creating environment branches like staging and production. When someone wants to deploy to staging they create a merge request from the master branch to the pre-production branch. And going live with code happens by merging the staging branch into the production branch. This workflow, where commits only flow downstream, ensures that everything has been tested on all environments.
+
+    <img src="https://github.com/alexanderteplov/computer-science/wiki/ci-cd-cd-and-git/images/GitLab_flow.svg" width="500px">`,
     category: 'ci-cd-git'
   },
   {
@@ -4019,23 +4060,81 @@ Inadvertent and prudent technical debt happens when a knowledgeable team applies
     category: 'ci-cd-git'
   },
   {
-    question: 'Які є деплоімент стратегії?',
-    answer: ``,
+    question: 'Які є release(деплоімент) стратегії?',
+    answer: `
+    <div class="markdown-body">
+                <h1><a id="user-content-release-strategies" class="anchor" aria-hidden="true" href="#release-strategies"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Release strategies</h1>
+      <h2><a id="user-content-big-bang-deployment" class="anchor" aria-hidden="true" href="#big-bang-deployment"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Big-bang deployment</h2>
+      <p>All new system is deployed at once immediately replacing the old system. Challengeable for the testing team and hard to rollback.</p>
+      <h2><a id="user-content-ring-deployment" class="anchor" aria-hidden="true" href="#ring-deployment"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Ring deployment</h2>
+      <p>Deployment occurs in several stages, starting from the small group of users, e.g. the developers team (the smallest ring), the next ring is wider, e.g. beta society, and so on till all the users would be involved.</p>
+      <p>Allows to fix bugs on earlier stages affecting less users.</p>
+      <p>Easily combined with other strategies.</p>
+      <h2><a id="user-content-rolling-deployment" class="anchor" aria-hidden="true" href="#rolling-deployment"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Rolling deployment</h2>
+      <p>Rolling, step, or phased deployments. In a rolling deployment, an application’s new version gradually replaces the old one.</p>
+      <img src="ci-cd-cd-and-git/images/rolling.png" width="600px">
+      <h2><a id="user-content-blue-green-deployment" class="anchor" aria-hidden="true" href="#blue-green-deployment"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Blue-green deployment</h2>
+      <p>Also Red-Black or A/B Deployment. In this method, two identical production environments work in parallel. Once the new version has been deployed to the one of the production environments we switch the router/balancer to it.</p>
+      <img src="ci-cd-cd-and-git/images/blue-green.png" width="600px">
+      <h2><a id="user-content-canary-deployment" class="anchor" aria-hidden="true" href="#canary-deployment"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Canary deployment</h2>
+      <p>It's combined blue-green and phased (rolling) deployments. We deploy the new application on small part of the infrastructure and route a small group of users to it.</p>
+      <img src="ci-cd-cd-and-git/images/canary.png" width="600px">
+      <h2><a id="user-content-links" class="anchor" aria-hidden="true" href="#links"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a><em>Links</em></h2>
+      <ul>
+      <li><a href="https://dev.to/mostlyjason/intro-to-deployment-strategies-blue-green-canary-and-more-3a3" rel="nofollow">Intro to deployment strategies: blue-green, canary, and more</a></li>
+      </ul>
+              </div>
+    `,
     category: 'ci-cd-git'
   },
-  {
-    question: 'Які є реліз стратегії?',
-    answer: ``,
-    category: 'ci-cd-git'
-  },
+  //---------------------------------------------------------------------
   {
     question: 'Що таке SDLC? Які його етапи? ',
-    answer: ``,
+    answer: `
+    <div class="markdown-body">
+                <h1><a id="user-content-software-development-life-cycle" class="anchor" aria-hidden="true" href="#software-development-life-cycle"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Software Development Life Cycle</h1>
+<p>SDLC is a framework defining tasks performed at each step in the software development process.</p>
+<img src="sdlc-methodologies/images/sdlc_stages.jpg" width="500px">
+<h2><a id="user-content-stages" class="anchor" aria-hidden="true" href="#stages"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Stages</h2>
+<h3><a id="user-content-1-planning-and-requirement-analysis" class="anchor" aria-hidden="true" href="#1-planning-and-requirement-analysis"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>1. Planning and Requirement Analysis</h3>
+<p>It is performed by the senior members of the team with inputs from the customer, the sales department, market surveys and domain experts in the industry. This information is then used to plan the basic project approach and to conduct product feasibility study in the economical, operational and technical areas.</p>
+<p>The outcome of the technical feasibility study is to define the various technical approaches that can be followed to implement the project successfully with minimum risks.</p>
+<h3><a id="user-content-2-defining-requirements" class="anchor" aria-hidden="true" href="#2-defining-requirements"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>2. Defining Requirements</h3>
+<p>Documenting of the stage 1.</p>
+<p>SRS (Software Requirement Specification) document which consists of all the product requirements to be designed and developed during the project life cycle.</p>
+<p>This DDS is reviewed by all the important stakeholders to select the best design.</p>
+<h3><a id="user-content-3-designing-the-product-architecture" class="anchor" aria-hidden="true" href="#3-designing-the-product-architecture"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>3. Designing the Product Architecture</h3>
+<p>Based on the requirements specified in SRS, usually more than one design approach for the product architecture is proposed and documented in a DDS - Design Document Specification.</p>
+<h3><a id="user-content-4-building-or-developing-the-product" class="anchor" aria-hidden="true" href="#4-building-or-developing-the-product"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>4. Building or Developing the Product</h3>
+<p>In this stage of SDLC the actual development starts and the product is built. The programming code is generated as per DDS during this stage.</p>
+<h3><a id="user-content-5-testing-the-product" class="anchor" aria-hidden="true" href="#5-testing-the-product"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>5. Testing the Product</h3>
+<p>This stage refers to the testing only stage of the product where product defects are reported, tracked, fixed and retested, until the product reaches the quality standards defined in the SRS.</p>
+<h3><a id="user-content-6-deployment-in-the-market-and-maintenance" class="anchor" aria-hidden="true" href="#6-deployment-in-the-market-and-maintenance"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>6. Deployment in the Market and Maintenance</h3>
+<p>The product is released formally. It may first be released in a limited segment and tested in the real business environment (UAT- User acceptance testing). After the product is released in the market, its maintenance is done.</p>
+<h2><a id="user-content-sdlc-models" class="anchor" aria-hidden="true" href="#sdlc-models"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>SDLC Models</h2>
+
+<h2><a id="user-content-lins" class="anchor" aria-hidden="true" href="#lins"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a><em>lins</em></h2>
+<ul>
+<li><a href="https://www.tutorialspoint.com/sdlc/sdlc_overview.htm" rel="nofollow">SDLC - Overview</a></li>
+</ul>
+
+              </div>
+    `,
     category: 'sdlc'
   },
   {
     question: 'Моделі SDLC\n',
-    answer: ``,
+    answer: `
+    <p>Following are the most important and popular SDLC models followed in the industry:</p>
+<ul>
+<li>Waterfall Model</li>
+<li>Iterative Model</li>
+<li>Spiral Model</li>
+<li>V-Model</li>
+<li>Big Bang Model</li>
+</ul>
+<p>Other related methodologies are Agile Model, RAD Model, Rapid Application Development and Prototyping Models.</p>
+    `,
     category: 'sdlc'
   },
   {
@@ -4050,7 +4149,27 @@ Inadvertent and prudent technical debt happens when a knowledgeable team applies
   },
   {
     question: 'Що таке definition of ready & defenition of done?',
-    answer: ``,
+    answer: `
+    <div class="markdown-body">
+
+<p>The DoD is usually a short document in the form of a checklist, that defines when a product backlog item (i.e. user story) is considered “done”.</p>
+<p>The best check whether something is “done” is to simply ship it!</p>
+<p>A typical DoD might look like this example:</p>
+<ul>
+<li>Automated tests are written and all tests are green</li>
+<li>Code is refactored and reviewed</li>
+<li>Code is integrated with master branch</li>
+<li>Deployed to staging environment</li>
+<li>Translated into English and German</li>
+</ul>
+
+              </div>
+
+    The DoR is the little cousin of the DoD. It is a checklist of what needs to be done to a product backlog item before the team can start implementing it in the next sprint. You can view the definition of ready as the “DoD” the Product Owner has to fulfill so that the Development Team accepts the story in the Sprint Planning meeting.
+    <br>
+    <ul class=""><li id="7984" class="uj uk im jl b jm jn jq jr ju ul jy um kc un kg uo up uq ur gh" data-selectable-paragraph="">PO and Dev Team need to have talked about the story at least once</li><li id="dc1f" class="uj uk im jl b jm us jq ut ju uu jy uv kc uw kg uo up uq ur gh" data-selectable-paragraph="">Story must have clear business value</li><li id="d97b" class="uj uk im jl b jm us jq ut ju uu jy uv kc uw kg uo up uq ur gh" data-selectable-paragraph="">Effort needs to be estimated</li><li id="17c8" class="uj uk im jl b jm us jq ut ju uu jy uv kc uw kg uo up uq ur gh" data-selectable-paragraph="">Story must be broken down enough to fit a single sprint</li><li id="d4a1" class="uj uk im jl b jm us jq ut ju uu jy uv kc uw kg uo up uq ur gh" data-selectable-paragraph="">Story needs at least one acceptance criterium</li></ul>
+    In case you want a good guideline for your DoR, consider the INVEST schema: A user story should be Independent, Negotiable, Valuable, Estimable, Small and Testable.
+`,
     category: 'sdlc'
   },
   {
@@ -4109,8 +4228,74 @@ Inadvertent and prudent technical debt happens when a knowledgeable team applies
     category: 'sdlc'
   },
   {
-    question: '',
+    question: ' В яких одиницях ми можемо оцінювати?',
     answer: ``,
     category: 'estimations'
+  },
+  {
+    question: 'Кастомер приходить і каше шо не шарить шо таке сторі поінт і каже шо нехай 1 сторі поінт то 1 день і ми всі будем шарити. ок чи не ок?',
+    answer: ``,
+    category: 'estimations'
+  },
+  {
+    question: 'Якщо година це одиниця часу, то сторі поінти це одиниця чого?',
+    answer: ``,
+    category: 'estimations'
+  },
+  {
+    question: 'Чому ми лімітуємо себе числами фібоначі в сторі поінтах',
+    answer: ``,
+    category: 'estimations'
+  },
+  {
+    question: 'Як порахувати велосіті?',
+    answer: ``,
+    category: 'estimations'
+  },
+  {
+    question: 'Як речі можуть завищувати оцінку?',
+    answer: ``,
+    category: 'estimations'
+  },
+  {
+    question: 'Ви проестімували таску на 13 днів, пішли до кастомера а він каже шо нада 10, і всьо. шо ви будете робити.',
+    answer: ``,
+    category: 'estimations'
+  },
+  {
+    question: 'Що таке MVP? Що воно нам показує?',
+    answer: ``,
+    category: 'estimations'
+  },
+  {
+    question: 'що таке MMF?',
+    answer: ``,
+    category: 'estimations'
+  },
+  {
+    question: 'Різниця між StoryPoint & ValuePoints?',
+    answer: ``,
+    category: 'estimations'
+  },
+  {
+    question: 'Що таке Spike?',
+    answer: ``,
+    category: 'estimations'
+  },
+  {
+    question: 'Що таке PLC?',
+    answer: ``,
+    category: 'estimations'
+  },
+  {
+    question: 'Що робити якщо ми зафейлили естімації?',
+    answer: ``,
+    category: 'estimations'
+  },
+  //----------------------------------------------------------------
+  {
+    question: 'Хто такий сініор девелопер',
+    answer: ``,
+    category: 'general'
   }
 ];
