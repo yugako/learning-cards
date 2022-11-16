@@ -3339,6 +3339,31 @@ Simply put, each micro frontend is just code for a fragment — a separate featu
   {
     question: 'Що таке патерни? Які вони бувають?',
     answer: `
+	<section id="design-patterns">
+      <h2>Design Patterns</h2>
+      <h3>Creational</h3>
+      <ul>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/design-patterns/builder.html" target="_blank">Builder</a> - constructs complex objects by separating construction and representation</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/design-patterns/factory.html" target="_blank">Factory method</a> - creates objects without specifying the exact class to create</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/design-patterns/singleton.html" target="_blank">Singleton</a> - restricts object creation for a class to only one instance</li>
+      </ul>
+      <h3>Structural</h3>
+      <ul>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/design-patterns/decorator.html" target="_blank">Decorator</a> - dynamically adds/overrides behaviour in an existing method of an object</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/design-patterns/facade.html" target="_blank">Facade</a> - provides a simplified interface to a large body of code</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/design-patterns/proxy.html" target="_blank">Proxy</a> - provides a placeholder for another object to control access, reduce cost, and reduce complexity</li>
+      </ul>
+      <h3>Behavioral</h3>
+      <ul>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/design-patterns/chain-of-responsibility.html" target="_blank">Chain of responsibility</a> - delegates commands to a chain of processing objects</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/design-patterns/command.html" target="_blank">Command</a> - creates objects which encapsulate actions and parameters</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/design-patterns/iterator.html" target="_blank">Iterator</a> - implements a specialized language</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/design-patterns/mediator.html" target="_blank">Mediator</a> - allows loose coupling between classes by being the only class that has detailed knowledge of their methods</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/design-patterns/observer.html" target="_blank">Observer</a> - is a publish/subscribe pattern which allows a number of observer objects to see an event</li>
+        <li><a href="https://github.com/shichuan/javascript-patterns/blob/master/design-patterns/strategy.html" target="_blank">Strategy</a> - allows one of a family of algorithms to be selected on-the-fly at runtime</li>
+      </ul>
+    </section>
+	--------------------------------------------------------------------------------
     Design patterns are advanced object-oriented solutions to commonly occurring software problems.  Patterns are about reusable designs and interactions of objects.  Each pattern has a name and becomes part of a vocabulary when discussing complex design solutions.
     They are categorized in three groups: Creational, Structural, and Behavioral.
     <ul>
