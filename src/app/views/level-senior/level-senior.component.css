@@ -1,0 +1,20 @@
+.app-nav {
+  text-align: center;
+}
+
+.app-nav__link {
+  display: block;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #23262d;
+  transition: color .5s ease-in;
+}
+
+.app-nav__link:hover {
+  color: hotpink;
+}
+
+.app-greetings {
+  font-style: oblique;
+  text-align: center;
+}

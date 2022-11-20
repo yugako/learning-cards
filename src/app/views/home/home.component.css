@@ -1,20 +1,13 @@
-.app-nav {
-  text-align: center;
+.app-asmt__levels {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.app-nav__link {
-  display: block;
+.app-asmt__level {
+  padding: .5rem 1rem;
+  color: #fff;
+  background-color: steelblue;
   text-decoration: none;
-  font-size: 1.5rem;
-  color: #23262d;
-  transition: color .5s ease-in;
-}
-
-.app-nav__link:hover {
-  color: hotpink;
-}
-
-.app-greetings {
-  font-style: oblique;
-  text-align: center;
+  margin-right: .5rem;
 }

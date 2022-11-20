@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './views/home/home.component';
 import { TopicSingleComponent } from './views/topic-single/topic-single.component';
 import { HumanSlugPipe } from './pipes/human-slug.pipe';
+import { LevelSeniorComponent } from './views/level-senior/level-senior.component';
+import { LevelRmComponent } from './views/level-rm/level-rm.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HumanSlugPipe } from './pipes/human-slug.pipe';
     CardComponent,
     HomeComponent,
     TopicSingleComponent,
-    HumanSlugPipe
+    HumanSlugPipe,
+    LevelSeniorComponent,
+    LevelRmComponent,
   ],
   imports: [
     BrowserModule,

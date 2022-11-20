@@ -11,4 +11,5 @@
 <div class="buttons">
   <button [disabled]="start === 0" (click)="calcLearningCards(0)">Prev</button>
   <button [disabled]="end >= cards.length" (click)="calcLearningCards(1)">Next</button>
+  <button (click)="randomize()">Randomize</button>
 </div>

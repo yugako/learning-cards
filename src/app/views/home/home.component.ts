@@ -1,18 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import {CARDS} from "../../cards";
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
-  private cards = CARDS;
-  public categories: Array<string> = [];
+export class HomeComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-    this.categories = [...new Set(this.cards.map(({category}) => category ?? 'other'))]
-  }
 }

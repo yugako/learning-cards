@@ -30,7 +30,7 @@ export class TopicSingleComponent implements OnInit {
   ngOnInit() {
     this.topicId = this.route.snapshot.paramMap.get('slug') ?? '';
 
-    this.cards = this.getMixedCards().filter(({category}) => this.topicId === 'all'
+    this.cards = CARDS.filter(({category}) => this.topicId === 'all'
       ? !!category
       : !category || category === this.topicId);
   }
@@ -49,10 +49,10 @@ export class TopicSingleComponent implements OnInit {
     }
   }
 
-  getMixedCards() {
-    return CARDS
-    // .map(value => ({ value, sort: Math.random() }))
-    // .sort((a, b) => a.sort - b.sort)
-    // .map(({ value }) => value);
+  randomize() {
+    const getRandomIndex = Math.round(Math.random() * (this.cards.length + 1));
+
+    this.start = getRandomIndex;
+    this.end = getRandomIndex + 1;
   }
 }

@@ -1,17 +1,15 @@
-<section class="app-greetings">
-  <h4>Сонечко моє любиминьке 😘</h4>
-  <p>Я тут вирішив трошки модернізувати цей збірник питань, щоб ним можна було легше навігуватись і переглядати певні топіки</p>
-</section>
-
-<nav class="app-nav">
-  <h5>Categories:</h5>
+<div class="app-asmt__levels">
   <a
-    class="app-nav__link"
-    routerLink="/topic/all">
-    All
+    class="app-asmt__level"
+    routerLink="/home/senior">
+    L3
   </a>
+
   <a
-    class="app-nav__link"
-    [routerLink]="'/topic/' + category"
-    *ngFor="let category of categories;">{{category | humanSlug}}</a>
-</nav>
+    class="app-asmt__level"
+    routerLink="/home/rm">
+    RM1
+  </a>
+</div>
+
+<router-outlet></router-outlet>
