@@ -1,4 +1,6 @@
-export const CARDS = [
+import {Card} from "../types";
+
+export const L3_CARDS: Array<Card> = [
   {
     question: 'Для чого нам парадигми програмування?',
     answer: `Paradigms are important because they define a programming language and how it works.

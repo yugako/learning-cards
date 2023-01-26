@@ -1,6 +1,12 @@
 import {Component, HostListener, OnInit} from '@angular/core';
-import {CARDS} from "../../cards";
+import {L3_CARDS} from "../../data/l3-cards";
 import {ActivatedRoute} from "@angular/router";
+import {Card} from "../../types";
+import {RmCards} from "../../data/rm-cards";
+
+type CardsOptions = {
+  [key: string]: Array<Card>
+}
 
 @Component({
   selector: 'app-topic-single',
@@ -13,6 +19,11 @@ export class TopicSingleComponent implements OnInit {
   step = 1;
   start = 0;
   end = this.step;
+
+  cardsMapper: CardsOptions = {
+    'senior': L3_CARDS,
+    'rm': RmCards
+  };
 
   public topicId!: string | null;
 
@@ -29,8 +40,11 @@ export class TopicSingleComponent implements OnInit {
 
   ngOnInit() {
     this.topicId = this.route.snapshot.paramMap.get('slug') ?? '';
+    const [ topicHost ] = this.route.snapshot.url;
 
-    this.cards = CARDS.filter(({category}) => this.topicId === 'all'
+    const path = topicHost.path;
+
+    this.cards = this.cardsMapper[path].filter(({category}) => this.topicId === 'all'
       ? !!category
       : !category || category === this.topicId);
   }
@@ -50,9 +64,9 @@ export class TopicSingleComponent implements OnInit {
   }
 
   randomize() {
-    const getRandomIndex = Math.round(Math.random() * (this.cards.length + 1));
+    const randomIndex = Math.round(Math.random() * (this.cards.length - 1));
 
-    this.start = getRandomIndex;
-    this.end = getRandomIndex + 1;
+    this.start = randomIndex;
+    this.end = randomIndex + 1;
   }
 }

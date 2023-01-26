@@ -12,12 +12,15 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'senior', component: LevelSeniorComponent },
-      { path: 'rm', component: LevelRmComponent }
+      {
+        path: 'senior',
+        component: LevelSeniorComponent,
+      },
+      { path: 'senior/:slug', component: TopicSingleComponent },
+      { path: 'rm', component: LevelRmComponent },
+      { path: 'rm/:slug', component: TopicSingleComponent },
     ]
   },
-
-  { path: 'topic/:slug', component: TopicSingleComponent },
 ];
 
 @NgModule({

@@ -1,6 +1,7 @@
 <button routerLink="/home" class="home-button">Back to home</button>
 
 <h4 class="topic-header">Category: {{topicId | humanSlug}}</h4>
+<p class="topic-count">{{start + 1}} / {{cards.length}}</p>
 <div class="cards">
   <card
     *ngFor="let card of learningCards"

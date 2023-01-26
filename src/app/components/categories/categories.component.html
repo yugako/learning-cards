@@ -1,0 +1,12 @@
+<nav class="app-nav">
+  <h5>Categories:</h5>
+  <a
+    class="app-nav__link"
+    [routerLink]="'/home/' + level + '/all'">
+    All
+  </a>
+  <a
+    class="app-nav__link"
+    [routerLink]="'/home/' + level + '/' + category"
+    *ngFor="let category of categories;">{{category | humanSlug}}</a>
+</nav>

@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import {RmCards} from "../../data/rm-cards";
 
 @Component({
   selector: 'app-level-rm',
   templateUrl: './level-rm.component.html',
   styleUrls: ['./level-rm.component.css']
 })
-export class LevelRmComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class LevelRmComponent  {
+  public cards = RmCards;
 }

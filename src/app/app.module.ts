@@ -11,6 +11,7 @@ import { TopicSingleComponent } from './views/topic-single/topic-single.componen
 import { HumanSlugPipe } from './pipes/human-slug.pipe';
 import { LevelSeniorComponent } from './views/level-senior/level-senior.component';
 import { LevelRmComponent } from './views/level-rm/level-rm.component';
+import { CategoriesComponent } from './components/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { LevelRmComponent } from './views/level-rm/level-rm.component';
     HumanSlugPipe,
     LevelSeniorComponent,
     LevelRmComponent,
+    CategoriesComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,15 +7,4 @@
   </small>
 </section>
 
-<nav class="app-nav">
-  <h5>Categories:</h5>
-  <a
-    class="app-nav__link"
-    routerLink="/topic/all">
-    All
-  </a>
-  <a
-    class="app-nav__link"
-    [routerLink]="'/topic/' + category"
-    *ngFor="let category of categories;">{{category | humanSlug}}</a>
-</nav>
+<app-categories [cards]="cards"></app-categories>
