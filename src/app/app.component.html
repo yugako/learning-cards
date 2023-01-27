@@ -1,9 +1,15 @@
-<header>
-  <h2>
-    <a routerLink="/home">
-      Асесмент за 60с
-    </a>
-  </h2>
-</header>
+<div class="container">
+  <header class="app-header">
+    <h2 class="app-header__title">
+      <a routerLink="/">
+        Assessment in 60 seconds
+      </a>
+    </h2>
 
-<router-outlet></router-outlet>
+    <p class="app-header__description">
+      This site was intended to collect answers to the most popular topics required for Senior+ level in JS Software Engineering discipline.
+    </p>
+  </header>
+
+  <router-outlet></router-outlet>
+</div>

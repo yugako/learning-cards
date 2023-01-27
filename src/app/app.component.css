@@ -1,3 +1,13 @@
-header {
-  text-align: center;
+.app-header__title a {
+  text-decoration: none;
+  color: #050505;
+}
+
+.app-header__title a:hover {
+  color: darkred;
+}
+
+
+.app-header__description {
+  color: #222;
 }

@@ -1,15 +1,13 @@
-.app-nav {
-  text-align: center;
-}
-
 .app-nav__link {
   display: block;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #23262d;
   transition: color .5s ease-in;
+  padding: .25rem 0;
+  border-bottom: .0625rem solid grey;
 }
 
 .app-nav__link:hover {
-  color: hotpink;
+  color: darkred;
 }

@@ -8,9 +8,9 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class CategoriesComponent implements OnInit {
   @Input() cards!: Array<any>;
+  @Input() level!: string;
 
   public categories: Array<string> = [];
-  public level: string | undefined = '';
 
   constructor(
     private route: ActivatedRoute
@@ -18,7 +18,5 @@ export class CategoriesComponent implements OnInit {
 
   ngOnInit(): void {
     this.categories = [...new Set(this.cards.map(({category}) => category ?? 'other'))]
-
-    this.level = this.route.snapshot.routeConfig?.path;
   }
 }

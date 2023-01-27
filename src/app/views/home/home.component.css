@@ -1,14 +1,5 @@
-.app-asmt__levels {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
-.app-asmt__level {
-  padding: .5rem 1rem;
-  color: #fff;
-  background-color: steelblue;
-  text-decoration: none;
-  margin-right: .5rem;
+.app-levels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }

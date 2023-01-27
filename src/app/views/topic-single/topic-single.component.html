@@ -1,16 +1,31 @@
-<button routerLink="/home" class="home-button">Back to home</button>
-
 <h4 class="topic-header">Category: {{topicId | humanSlug}}</h4>
-<p class="topic-count">{{start + 1}} / {{cards.length}}</p>
-<div class="cards">
+<p class="topic-count">{{currentIdx + 1}} / {{cards.length}}</p>
+
+<div class="topic-buttons">
+  <button [disabled]="currentIdx === 0" (click)="calcLearningCards(0)">
+    <img src="assets/images/backward-solid.svg" />
+  </button>
+  <button (click)="randomize()">
+    <img src="assets/images/shuffle-solid.svg" />
+  </button>
+  <button [disabled]="currentIdx >= cards.length - 1" (click)="calcLearningCards(1)">
+    <img src="assets/images/forward-solid.svg" />
+  </button>
+</div>
+
+<section class="topic__content">
+  <div class="topic-questions">
+    <p
+      *ngFor="let card of cards; let i = index;"
+      [ngClass]="{'active': i === currentIdx}"
+      (click)="onCardSelect(i)"
+    >
+      {{card.question}}
+    </p>
+  </div>
+
   <card
-    *ngFor="let card of learningCards"
-    [question]="card.question"
-    [answer]="card.answer"
+    [question]="currentCard.question"
+    [answer]="currentCard.answer"
   ></card>
-</div>
-<div class="buttons">
-  <button [disabled]="start === 0" (click)="calcLearningCards(0)">Prev</button>
-  <button [disabled]="end >= cards.length" (click)="calcLearningCards(1)">Next</button>
-  <button (click)="randomize()">Randomize</button>
-</div>
+</section>

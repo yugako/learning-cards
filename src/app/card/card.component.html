@@ -1,8 +1,2 @@
-<div class="tp-wrapper">
-  <div class="tp-box" (click)="toggleFlip()" [@flipState]="flip">
-    <div class="tp-box__side tp-box__front" [innerHTML]="question" >
-    </div>
-    <div class="tp-box__side tp-box__back" [innerHTML]="answer">
-    </div>
-  </div>
-</div>
+<h4 class="card-title">{{question}}</h4>
+<div class="card-content" [innerHTML]="answer"></div>

@@ -14,18 +14,17 @@ type CardsOptions = {
   styleUrls: ['./topic-single.component.css']
 })
 export class TopicSingleComponent implements OnInit {
-  title = 'learning-cards';
-  cards: Array<any>  = [];
-  step = 1;
-  start = 0;
-  end = this.step;
+  public cards: Array<any>  = [];
+  public step = 1;
 
-  cardsMapper: CardsOptions = {
+  public cardsMapper: CardsOptions = {
     'senior': L3_CARDS,
     'rm': RmCards
   };
 
   public topicId!: string | null;
+  public currentIdx: number = 0;
+  public currentCard!: any;
 
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
@@ -40,33 +39,31 @@ export class TopicSingleComponent implements OnInit {
 
   ngOnInit() {
     this.topicId = this.route.snapshot.paramMap.get('slug') ?? '';
-    const [ topicHost ] = this.route.snapshot.url;
 
+    const [ topicHost ] = this.route.snapshot.url;
     const path = topicHost.path;
 
     this.cards = this.cardsMapper[path].filter(({category}) => this.topicId === 'all'
       ? !!category
       : !category || category === this.topicId);
-  }
 
-  get learningCards() {
-    return this.cards.slice(this.start, this.end);
+    this.onCardSelect();
   }
 
   calcLearningCards(state: number) {
-    if (state) {
-      this.start += this.step;
-      this.end += this.step;
-    } else {
-      this.start -= this.step;
-      this.end -= this.step;
-    }
+    state
+      ? this.currentIdx+=this.step
+      : this.currentIdx-=this.step;
+
+    this.onCardSelect(this.currentIdx);
   }
 
   randomize() {
-    const randomIndex = Math.round(Math.random() * (this.cards.length - 1));
+    this.onCardSelect(Math.round(Math.random() * (this.cards.length - 1)));
+  }
 
-    this.start = randomIndex;
-    this.end = randomIndex + 1;
+  onCardSelect(i: number = 0) {
+    this.currentIdx = i;
+    this.currentCard = this.cards[this.currentIdx];
   }
 }
