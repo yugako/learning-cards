@@ -17,6 +17,8 @@ export class TopicSingleComponent implements OnInit {
   public cards: Array<any>  = [];
   public step = 1;
 
+  public isQuestionsVisible = true;
+
   public cardsMapper: CardsOptions = {
     'senior': L3_CARDS,
     'rm': RmCards
@@ -65,5 +67,9 @@ export class TopicSingleComponent implements OnInit {
   onCardSelect(i: number = 0) {
     this.currentIdx = i;
     this.currentCard = this.cards[this.currentIdx];
+  }
+
+  onQuestionsToggle() {
+    this.isQuestionsVisible = !this.isQuestionsVisible;
   }
 }

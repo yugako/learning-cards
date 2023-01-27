@@ -13,15 +13,19 @@
   </button>
 </div>
 
+<button class="topic-questions__toggle" (click)="onQuestionsToggle()">Toggle/Collapse Questions List</button>
+
 <section class="topic__content">
   <div class="topic-questions">
-    <p
-      *ngFor="let card of cards; let i = index;"
-      [ngClass]="{'active': i === currentIdx}"
-      (click)="onCardSelect(i)"
-    >
-      {{card.question}}
-    </p>
+    <ng-container *ngIf="isQuestionsVisible">
+      <p
+        *ngFor="let card of cards; let i = index;"
+        [ngClass]="{'active': i === currentIdx}"
+        (click)="onCardSelect(i)"
+      >
+        {{card.question}}
+      </p>
+    </ng-container>
   </div>
 
   <card

@@ -12,6 +12,11 @@ h6 {
   font-family: var(--main-font);
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .container {
   max-width: 72rem;
   margin: 0 auto;
