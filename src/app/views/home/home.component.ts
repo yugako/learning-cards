@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import {L3_CARDS} from "../../data/l3-cards";
-import {RmCards} from "../../data/rm-cards";
+import {TOPICS_LIST} from "../../constants";
 
 @Component({
   selector: 'app-home',
@@ -8,16 +7,5 @@ import {RmCards} from "../../data/rm-cards";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  public levels = [
-    {
-      title: 'Level: Senior',
-      cards: L3_CARDS,
-      path: 'senior'
-    },
-    {
-      title: 'Level: Software Engineering Team Leader',
-      cards: RmCards,
-      path: 'rm'
-    }
-  ]
+  public topicsList = TOPICS_LIST;
 }

@@ -4,15 +4,11 @@ import {HomeComponent} from "./views/home/home.component";
 import {TopicSingleComponent} from "./views/topic-single/topic-single.component";
 
 const routes: Routes = [
-  {
-    path: '', redirectTo: 'home', pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    component: HomeComponent
-  },
-  { path: 'senior/:slug', component: TopicSingleComponent },
-  { path: 'rm/:slug', component: TopicSingleComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'software-engineering/:slug', component: TopicSingleComponent },
+  { path: 'resource-management/:slug', component: TopicSingleComponent },
+  { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({

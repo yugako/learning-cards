@@ -1,8 +1,9 @@
 import {Component, HostListener, OnInit} from '@angular/core';
-import {L3_CARDS} from "../../data/l3-cards";
+import {softwareEngineeringCards} from "../../data/software-engineering-cards";
 import {ActivatedRoute} from "@angular/router";
 import {Card} from "../../types";
-import {RmCards} from "../../data/rm-cards";
+import {resourceManagementCards} from "../../data/resource-management-cards";
+import {TOPICS_MAPPER} from "../../constants";
 
 type CardsOptions = {
   [key: string]: Array<Card>
@@ -18,12 +19,7 @@ export class TopicSingleComponent implements OnInit {
   public step = 1;
 
   public isQuestionsVisible = true;
-
-  public cardsMapper: CardsOptions = {
-    'senior': L3_CARDS,
-    'rm': RmCards
-  };
-
+  public cardsMapper: CardsOptions = TOPICS_MAPPER;
   public topicId!: string | null;
   public currentIdx: number = 0;
   public currentCard!: any;
@@ -65,7 +61,11 @@ export class TopicSingleComponent implements OnInit {
   }
 
   onCardSelect(i: number = 0) {
-    this.currentIdx = i;
+    this.currentIdx = i < 0
+      ? 0
+      : i > this.cards.length - 1
+        ? this.cards.length - 1
+        : i;
     this.currentCard = this.cards[this.currentIdx];
   }
 

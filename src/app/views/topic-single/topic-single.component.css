@@ -1,17 +1,19 @@
+/*  Start: Header  */
+
 .topic-header,
 .topic-count {
   text-align: center;
 }
 
-.buttons {
-  display: flex;
-  justify-content: center;
-}
+/*  End: Header  */
+
+/*  Start: Questions  */
 
 .topic-questions {
   max-height: 100vh;
   max-width: 16rem;
   overflow-y: auto;
+  display: block!important;
 }
 
 .topic-questions p {
@@ -35,11 +37,19 @@
   padding: .75rem;
 }
 
-.topic__content {
+/*  End: Questions  */
+
+/*  Start: Content  */
+
+.topic-content {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 1rem;
 }
+
+/*  End: Content  */
+
+/*  Start: Buttons  */
 
 .topic-buttons {
   display: flex;
@@ -63,6 +73,7 @@
   height: 1.5rem;
 }
 
+/*  End: Buttons  */
 
 @media screen and (max-width: 64rem) {
   .topic-questions {

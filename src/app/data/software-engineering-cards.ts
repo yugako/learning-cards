@@ -1,6 +1,6 @@
 import {Card} from "../types";
 
-export const L3_CARDS: Array<Card> = [
+export const softwareEngineeringCards: Array<Card> = [
   {
     question: 'Для чого нам парадигми програмування?',
     answer: `Paradigms are important because they define a programming language and how it works.
@@ -3116,18 +3116,22 @@ Simply put, each micro frontend is just code for a fragment — a separate featu
     category: 'web-application-design'
   },
   {
-    question: 'Як приживється з Ангуляр? Чи доречно його юзати?',
+    question: 'How does BEM work with Angular?',
     answer: `Якщо ми юзаємо view encapsulation - то ні. Якщо ні - то можна. БЕМ не варто юзати з ангуляром, бо то пережиток минулого)))))`,
     category: 'web-application-design'
   },
   {
     question: 'CSS modules',
-    answer: ``,
+    answer: `
+      Approach to write CSS that will isolated and related only to the module where it was used.
+    `,
     category: 'web-application-design'
   },
   {
     question: 'CSS in JS',
-    answer: ``,
+    answer: `
+      Approach to write styles in JS files. As an example: Styled components in React.
+    `,
     category: 'web-application-design'
   },
   {
@@ -3137,23 +3141,40 @@ Simply put, each micro frontend is just code for a fragment — a separate featu
   },
   {
     question: 'Atomic css',
-    answer: ``,
+    answer: `
+      One style rules for some particular entity. For example: 'button button-xs'. This approach is used in Bootstrap.
+    `,
     category: 'web-application-design'
   },
   //-------------------------------------------------------------------------------------------
   {
     question: 'Що таке Dependency injection? (injection tree, providedIn vs providers list)',
-    answer: ``,
+    answer: `
+       <p>Dependency injection is a pattern that manages how and where our dependencies should be instantiated.
+       It means that your class is not responsible for direct creating instance of dependency, now it's responsibility of
+       some other entities. Using DI we can significantly reduce coupling between our classes and have more readable and maintainable code.</p>
+
+       <p>When Angular tries to resolve some dependency it is looking through injection tree where are injectors are hierarchically located
+       It starts from element injectors tree that goes above to module tree. And if no injectors, it throws null injector error.</p>
+    `,
     category: 'angular-deep-dive'
   },
   {
     question: 'Що таке Inversion of control?',
-    answer: ``,
+    answer: `
+      <p>Abbr IoC stands for inversion of control. This pattern includes dependency injection. </p>
+      <p>The main idea is: code shouldn't decide when and where to instantiate objects.
+      It's better to trust it to a controlling framework, a library, or your dedicated module.
+      Either of them is generally called a container.
+      So container plays a controlling role: knows and care about objects lifetime, allocates and eliminates them.</p>
+    `,
     category: 'angular-deep-dive'
   },
   {
     question: 'Що таке lightweight mechanism?',
-    answer: ``,
+    answer: `
+
+    `,
     category: 'angular-deep-dive'
   },
   {
