@@ -25,7 +25,7 @@ export const angularDeepDiveCards = [
   {
     question: 'Що таке lightweight mechanism?',
     answer: `
-
+      It's a mechanism for bundle optimization. By providing dependency using lightweight injection token we can make these dependency tree-shakable.
     `,
     category: 'angular-deep-dive'
   },
@@ -41,17 +41,25 @@ export const angularDeepDiveCards = [
   },
   {
     question: 'Що таке tree-shaking? Чи завжди працює? коли зявилось?',
-    answer: `8 версія`,
+    answer: `It appeared with Angular 8 with introducing IVY render engine. Tree-shaking it is mechanism to exclude code that is not
+     using in final bundle`,
     category: 'angular-deep-dive'
   },
   {
-    question: 'Change detciion strategues.',
-    answer: ``,
+    question: 'Change detection strategies.',
+    answer: `
+      - Default: trigger CD on everything ( events, input, setTimeout, etc ) <br/ >
+      - On Push: triggers only when: input prop reference change, events, asyncPipe, setTimeout.
+    `,
     category: 'angular-deep-dive'
   },
   {
     question: 'NgZone/ run out zone, attach/detach?\n',
-    answer: ``,
+    answer: `
+      - runOutsideAngular add a possibility to run code outside zone context to avoid unnecessary CD triggers <br />
+      - attach - make component visible to change detection mechanism <br />
+      - detach - make component invisible to change detection mechanism
+    `,
     category: 'angular-deep-dive'
   },
   {

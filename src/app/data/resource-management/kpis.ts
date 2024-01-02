@@ -62,6 +62,8 @@ export const kpisCards = [
     question: 'Attrition',
     answer: `
       Attrition rate: Ratio of total year to date dismissed employees to sum of headcount for each month of the same period.
+
+      <img src="assets/cards/attrition.png" />
     `,
     category: "kpis"
   },
@@ -78,7 +80,7 @@ export const kpisCards = [
     answer: `
       OKR stands for objectives and key results; KPI - key performance indicators.
 
-      <img src="https://prnt.sc/c2CUWO3Q1as2" />
+      <img src="assets/cards/okr.png" />
     `,
     category: "kpis"
   },

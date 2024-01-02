@@ -4,8 +4,13 @@ export const generalCards: Array<Card> = [
   {
     question: 'What is EPAM corporate culture? (for you)',
     answer: `
-      EPAM corporate culture for me is when the person follows the code of conduct, law of the country, is tolerant,
-      is focused on the customer and strive for excellence.
+      As for me, EPAM corporate culture is continuous studying and improvements. <br />
+
+      The person follows the code of conduct, law of the country, is tolerant,
+      is focused on the customer and strive for excellence then I can be sure that person follows our company culture.
+
+      To achieve a good results company should strive to make comfortable conditions for work as much
+      as possible. So, EPAM is a good example of a company with good corporate culture.
     `,
     category: "general"
   },

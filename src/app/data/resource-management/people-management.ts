@@ -195,7 +195,16 @@ export const peopleManagement: Array<Card> = [
     question: 'How often do you have 1-2-1? why?',
     answer: `
       It depends on risk of leaving status. If leaver once per week, if medium - once per month. By default, I am trying to have
-      1-2-1 once per 2 month maximum. But, more often I am texting to subordinate just to check how the subordinate feeling, and if everything is ok.
+      1-2-1 once per 2 month maximum. But, more often I am texting to subordinate just to check how the subordinate feeling, and if everything is ok. <br />
+
+      Regular 1-to-1 is the best way to develop a strong relationship between managers and their team members. <br />
+
+      Major events in employee's life (promotion, feedback, rotation etc.) should be discussed immediately.
+      In other cases recommended minimum frequency of 1-on-1 depends on the latest risk of leaving: <br />
+
+      Leaver – bi-weekly <br />
+      Medium and High – monthly <br />
+      Low – quarterly <br />
     `,
     category: "people-management"
   },

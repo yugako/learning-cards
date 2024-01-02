@@ -218,7 +218,44 @@ export const rmRoleCards: Array<Card> = [
   {
     question: 'Points of collaboration with HR BP? what problems HR notifies you about?',
     answer: `
-      I guess it may relate to some adaptation stuff, things related to internal processes ( relocate for example ).
+      I guess it may relate to some adaptation stuff, things related to internal processes ( relocate for example ). <br />
+
+      On strategic level: <br />
+
+      Provide input / develop of retention strategy for the unit based on EPAM strategy, best practices in people management and analyses of current situation. <br />
+
+      On operation level: <br />
+
+      Consult and support RMs during the whole process. RM is the the one who is ultimately responsible for team motivation and retention.
+      Perform Talk timeliness and quality check. Report trends and issues to unit head. <br />
+
+      Inform RM when get input on increased risk of leaving for an employee: rumors, changes in behavior, related activity in social network, etc. <br />
+
+      Conduct mandatory HR related 1-on-1 and regular 1-on-one by request. <br />
+
+      Advise on retention activities by request. <br />
+
+      Overview relations between RM and team members, suggest improvements and alarm major issues to higher manager. <br />
+
+      <pre>
+           HR Strategy Development for Unit
+          Adaptation of Newcomers
+          One-to-one Meetings with Employees
+          Satisfaction Surveys
+          People Management competencies development
+          HR Programs support
+          Support during performance reviews
+          Consulting in conflict situations
+          Support in team-building events
+          Cooperation with L&D
+          Internal communications
+          Coaching
+          Exit Interviews Conduction
+          Consulting on company HR policies
+          HR Reporting
+          Other (based on business needs and agreement with managers)
+      </pre>
+
     `,
     category: "resource-management-role"
   },

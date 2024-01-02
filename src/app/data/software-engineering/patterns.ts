@@ -189,31 +189,99 @@ The Singleton’s constructor should be hidden from the client code. Calling the
   },
   {
     question: 'Що таке Builder? Яку проблему вирішує?\n',
-    answer: ``,
+    answer: `
+      It's a pattern that allows us to create a complex objects step by step. <br>
+
+      Problem: hard creation of new complex objects <br>
+      Solution: Create a separate builder with its own methods that will build some part of the object. To build an object you just need to
+      call needed methods from builder. <br>
+
+      More advanced way to implement builder it's using Director. It's class which decide the steps for building and builder will perform this steps <br />
+
+      Use cases: <br>
+      - Reduce huge amount of parameters in constructor <br />
+      - Code should create a different representations of objects <br />
+      - Need to build complex structures like Combiner tree. <br />
+
+      Pros: <br>
+      - Create objects step by step <br />
+      - Code reuse <br />
+      - Separation between object creation and business logic <br />
+
+      Cons: <br/>
+      - Increase code complexity <br />
+      - Client will be coupled to separate builders <br />
+    `,
+    category: 'patterns '
+  },
+  {
+    question: 'Factory method',
+    answer: `
+      Defines the general interface for object creation in superclass and allows type changes by subclasses for created objects. <br>
+
+      Problem: complex creation of objects with similar purpose <br />
+      Solution: Instead of using new for object creation we can use special factory method that will manage object creation. <br />
+
+      Use cases: <br />
+      - Unclear dependencies between objects <br />
+      - Add capability to extend some parts of your code <br />
+      - Save resources by using already created objects <br />
+
+      Pros: <br>
+      - Loose coupling between class and concrete product class <br />
+      - Move creation logic to one place <br />
+      - Implement open/closed principle <br />
+      - Make code more maintainable <br />
+
+      Cons: <br />
+      - Can lead to huge parallel hierarchies of classes
+    `,
+    category: 'patterns '
+  },
+  {
+    question: 'Abstract Factory',
+    answer: `
+      Allows creation of families linked objects without coupling to concrete classes of created objects. <br />
+
+      Problem: create families of objects in more easier and maintainable way. <br />
+      Solution: defined an abstract factory that will define the common behavior for family of the products. Then create an Abstract Factory that will contain
+      all abstract methods for objects creation. <br />
+
+      Use cases: <br />
+      - Business logic needs to work with different linked products
+      - When we are using Factory method, but we need to add new types of products <br />
+
+      Pros: <br />
+      - Implements open-closed principle  <br />
+      - Easier way for adding new products to the program  <br />
+      - Move creation logic to the separate place  <br />
+
+      Cons:
+      - Increase code complexity <br />
+    `,
     category: 'patterns '
   },
   {
     question: 'Що таке Proxy? Яку проблему вирішує?',
-    answer: ``,
+    answer: `
+        Proxy - provides a placeholder for another object to control access, reduce cost, and reduce complexity
+    `,
     category: 'patterns '
   },
   {
     question: 'Що таке Mediator? Яку проблему вирішує?',
-    answer: ``,
+    answer: `
+      Mediator - allows loose coupling between classes by being the only class that has detailed knowledge of their methods
+    `,
     category: 'patterns '
   },
   {
-    question: 'Що таке Facad? Яку проблему вирішує?\n',
+    question: 'Що таке Facade? Яку проблему вирішує?',
     answer: ``,
     category: 'patterns '
   },
   {
     question: 'Що таке Decorator? Яку проблему вирішує?\n',
-    answer: ``,
-    category: 'patterns '
-  },
-  {
-    question: 'Що таке Fabric method? Яку проблему вирішує?\n',
     answer: ``,
     category: 'patterns '
   },
@@ -258,7 +326,7 @@ The Singleton’s constructor should be hidden from the client code. Calling the
     category: 'patterns '
   },
   {
-    question: 'Що таке Event Path?',
+    question: 'Що таке Event Bus?',
     answer: ``,
     category: 'patterns '
   },
@@ -299,11 +367,6 @@ The Singleton’s constructor should be hidden from the client code. Calling the
   },
   {
     question: 'Як варто створювати і зберігати стор? що таке нормалайзер?',
-    answer: ``,
-    category: 'patterns '
-  },
-  {
-    question: 'Чим асинк пайп краще нiж сабскрайб?',
     answer: ``,
     category: 'patterns '
   },

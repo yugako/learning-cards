@@ -12,6 +12,8 @@ export const onboardingCards = [
   {
     question: 'Describe the process of onboarding junior',
     answer: `
+      Onboarding is aimed at helping employees to adapt to a diverse EPAM environment with its various tools and processes;
+      to help with transition to new roles and responsibilities as smooth as possible. <br />
       Since it's a junior developer he or she will need more help than more senior dev. Mostly junior will need assistance in process, personal development topics.
       If it's project onboarding need to pay attention to the project specific and explain junior architecture, technologies that are used on the project.
     `,
