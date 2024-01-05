@@ -1,12 +1,7 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {Card, QuestionEntry} from "../../types";
-import {TOPICS_MAPPER} from "../../constants";
+import {QuestionEntry} from "../../types";
 import {ContentService} from "../../services/content.service";
-
-type CardsOptions = {
-  [key: string]: Array<Card>
-}
 
 @Component({
   selector: 'app-topic-single',

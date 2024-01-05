@@ -12,8 +12,6 @@ import {QuestionEntry} from "../types";
 export class ContentService {
   public entries: BehaviorSubject<QuestionEntry[]> = new BehaviorSubject<QuestionEntry[]>([]);
 
-  constructor() { }
-
   public getContent(): void {
     createClient({
       space: environment.spaceId,
@@ -36,6 +34,9 @@ export class ContentService {
       .then((entries: QuestionEntry[]) => {
         this.entries.next(entries);
       })
-      .catch(console.error);
+      .catch((err) => {
+        console.log(err);
+        this.entries.next([]);
+      });
   }
 }

@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit{
   public ngOnInit(): void {
     this.topicsList = this.contentService.entries.pipe(map(entries => {
       // @ts-ignore
-      const entriesMap = Object.groupBy(entries, ({discipline}) => discipline);
+      const entriesMap = Object?.groupBy(entries, ({discipline}) => discipline);
 
       return Object.keys(entriesMap).map(entry => {
         return {

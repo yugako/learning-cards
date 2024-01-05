@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Card} from "../../types";
 
 @Component({
   selector: 'app-categories',
@@ -6,8 +7,8 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
-  @Input() cards!: Array<any>;
-  @Input() level!: string;
+  @Input() cards: Array<Card>;
+  @Input() level: string;
 
   public categories: Array<string> = [];
 
