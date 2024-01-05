@@ -2,7 +2,7 @@
   <h3>Table of contents</h3>
 
   <div class="app-levels">
-    <div class="app-level" *ngFor="let topic of topicsList;">
+    <div class="app-level" *ngFor="let topic of topicsList | async;">
       <h4>{{topic.title}}</h4>
       <app-categories [level]='topic.path' [cards]="topic.cards"></app-categories>
     </div>

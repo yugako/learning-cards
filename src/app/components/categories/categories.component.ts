@@ -12,6 +12,6 @@ export class CategoriesComponent implements OnInit {
   public categories: Array<string> = [];
 
   ngOnInit(): void {
-    this.categories = [...new Set(this.cards.map(({category}) => category ?? 'other'))]
+    this.categories = this.cards ? [...new Set(this.cards.map(({category}) => category ?? 'other'))] : [];
   }
 }

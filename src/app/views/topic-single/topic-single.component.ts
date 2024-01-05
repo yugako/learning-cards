@@ -1,9 +1,8 @@
 import {Component, HostListener, OnInit} from '@angular/core';
-import {softwareEngineeringCards} from "../../data/software-engineering-cards";
 import {ActivatedRoute} from "@angular/router";
-import {Card} from "../../types";
-import {resourceManagementCards} from "../../data/resource-management-cards";
+import {Card, QuestionEntry} from "../../types";
 import {TOPICS_MAPPER} from "../../constants";
+import {ContentService} from "../../services/content.service";
 
 type CardsOptions = {
   [key: string]: Array<Card>
@@ -19,7 +18,6 @@ export class TopicSingleComponent implements OnInit {
   public step = 1;
 
   public isQuestionsVisible = true;
-  public cardsMapper: CardsOptions = TOPICS_MAPPER;
   public topicId!: string | null;
   public currentIdx: number = 0;
   public currentCard!: any;
@@ -32,7 +30,8 @@ export class TopicSingleComponent implements OnInit {
   }
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private contentService: ContentService
   ) {}
 
   ngOnInit() {
@@ -41,11 +40,16 @@ export class TopicSingleComponent implements OnInit {
     const [ topicHost ] = this.route.snapshot.url;
     const path = topicHost.path;
 
-    this.cards = this.cardsMapper[path].filter(({category}) => this.topicId === 'all'
-      ? !!category
-      : !category || category === this.topicId);
+    this.contentService.entries.subscribe(entries => {
+      // @ts-ignore
+      const entriesMap = Object.groupBy(entries, ({discipline}) => discipline);
 
-    this.onCardSelect();
+      this.cards = entries.length ? entriesMap[path].filter(({category}: QuestionEntry) => this.topicId === 'all'
+        ? !!category
+        : !category || category === this.topicId) : [];
+
+      this.onCardSelect();
+    })
   }
 
   calcLearningCards(state: number) {

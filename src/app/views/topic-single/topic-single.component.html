@@ -29,6 +29,7 @@
   </div>
 
   <card
+    *ngIf="currentCard"
     [question]="currentCard.question"
     [answer]="currentCard.answer"
   ></card>

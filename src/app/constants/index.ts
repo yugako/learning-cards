@@ -1,7 +1,8 @@
 import {softwareEngineeringCards} from "../data/software-engineering-cards";
 import {resourceManagementCards} from "../data/resource-management-cards";
+import {TopicsList} from "../types";
 
-export const TOPICS_LIST = [
+export const TOPICS_LIST: TopicsList[] = [
   {
     title: 'Discipline: Software Engineering',
     cards: softwareEngineeringCards,

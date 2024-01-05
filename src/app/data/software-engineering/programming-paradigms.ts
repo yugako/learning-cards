@@ -1,23 +1,5 @@
 export const programmingParadigmsCards = [
   {
-    question: 'Для чого нам парадигми програмування?',
-    answer: `Paradigms are important because they define a programming language and how it works.
-    A great way to think about a paradigm is as a set of ideas that a programming language can use to perform tasks
-    in terms of machine-code at a much higher level.Certain paradigms are better suited for certain types of problems,
-    so it makes sense to use different paradigms for different kinds of projects.`,
-    category: "programming-paradigms"
-  },
-  {
-    question: 'Imperative vs Declarative. Що вони значать, для чого вони?',
-    answer: 'Imperative code (HOW) is where you spell out each step of how you want something done, whereas with declarative code you merely say what it is that you want done',
-    category: "programming-paradigms"
-  },
-  {
-    question: 'Що таке ООП? Розповісти про їх стовпи. + Приклади з життя',
-    answer: 'OOP is programming paradigm that represents program entities throughout the object and defines how we can interact with this objects.',
-    category: "programming-paradigms"
-  },
-  {
     question: 'Що таке Abstraction?',
     answer: `The process of generalization (also modeling). We replace a particular thing by its more general model. Allow us not to be coupled with implementation details, to use any implementation, satisfying specific interface.
 An abstract class is a class with at least one abstract method. Abstract class's non-abstract methods can have implementations, but a class itself can't.
