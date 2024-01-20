@@ -16,7 +16,9 @@ export class ContentService {
     createClient({
       space: environment.spaceId,
       accessToken: environment.accessToken
-    }).getEntries()
+    }).getEntries({
+      limit: 1000
+    })
       .then(({items}) => items.map(({fields: {
         question,
         category,
