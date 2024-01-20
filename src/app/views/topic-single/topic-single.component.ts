@@ -1,6 +1,6 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {QuestionEntry} from "../../types";
+import {Card, QuestionEntry} from "../../types";
 import {ContentService} from "../../services/content.service";
 
 @Component({
@@ -9,7 +9,7 @@ import {ContentService} from "../../services/content.service";
   styleUrls: ['./topic-single.component.css']
 })
 export class TopicSingleComponent implements OnInit {
-  public cards: Array<any>  = [];
+  public cards: Array<Card>  = [];
   public step = 1;
 
   public isQuestionsVisible = true;
@@ -39,9 +39,9 @@ export class TopicSingleComponent implements OnInit {
       // @ts-ignore
       const entriesMap = Object.groupBy(entries, ({discipline}) => discipline);
 
-      this.cards = entries.length ? entriesMap[path].filter(({category}: QuestionEntry) => this.topicId === 'all'
+      this.cards = (entries.length ? entriesMap[path].filter(({category}: QuestionEntry) => this.topicId === 'all'
         ? !!category
-        : !category || category === this.topicId) : [];
+        : !category || category === this.topicId) : []).reverse();
 
       this.onCardSelect();
     })

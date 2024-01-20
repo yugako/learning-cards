@@ -1,0 +1,76 @@
+:root {
+  --main-font: 'Aboreto', cursive;
+  --secondary-font: 'Lato'
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--main-font);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+code {
+  font-family: Consolas, Monaco, monospace;
+  font-size: 14px;
+  background-color: #f4f4f4;
+  padding: 2px 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+}
+
+p code {
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+}
+
+pre code {
+  display: block;
+  padding: 10px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    padding: 10px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  tr:hover {
+    background-color: #e0e0e0;
+  }
+}
